@@ -1,0 +1,5 @@
+[console_scripts]
+hl_ctrl = controller.hl_ctrl:main
+hw_interface = controller.hw_interface:main
+mtr_ctrl = controller.mtr_ctrl:main
+

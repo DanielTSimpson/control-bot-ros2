@@ -1,0 +1,32 @@
+[1.305s] Invoking command in '/home/daniel/controlbot_ws/src/controller': PYTHONPATH=/home/daniel/controlbot_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/controller build --build-base /home/daniel/controlbot_ws/build/controller/build install --record /home/daniel/controlbot_ws/build/controller/install.log --single-version-externally-managed install_data
+[1.809s] running egg_info
+[1.811s] writing ../../build/controller/controller.egg-info/PKG-INFO
+[1.811s] writing dependency_links to ../../build/controller/controller.egg-info/dependency_links.txt
+[1.812s] writing entry points to ../../build/controller/controller.egg-info/entry_points.txt
+[1.812s] writing requirements to ../../build/controller/controller.egg-info/requires.txt
+[1.812s] writing top-level names to ../../build/controller/controller.egg-info/top_level.txt
+[1.816s] reading manifest file '../../build/controller/controller.egg-info/SOURCES.txt'
+[1.817s] adding license file 'LICENSE'
+[1.818s] writing manifest file '../../build/controller/controller.egg-info/SOURCES.txt'
+[1.818s] running build
+[1.818s] running build_py
+[1.819s] copying controller/hw_interface.py -> /home/daniel/controlbot_ws/build/controller/build/lib/controller
+[1.820s] running install
+[1.820s] running install_lib
+[1.822s] copying /home/daniel/controlbot_ws/build/controller/build/lib/controller/hw_interface.py -> /home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller
+[1.823s] byte-compiling /home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller/hw_interface.py to hw_interface.cpython-310.pyc
+[1.825s]   File "/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller/hw_interface.py", line 55
+[1.825s]     int test = 2
+[1.825s]         ^^^^
+[1.825s] SyntaxError: invalid syntax
+[1.825s] 
+[1.825s] running install_data
+[1.826s] running install_egg_info
+[1.829s] removing '/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.829s] Copying ../../build/controller/controller.egg-info to /home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller-0.0.0-py3.10.egg-info
+[1.831s] running install_scripts
+[1.876s] Installing hl_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[1.876s] Installing hw_interface script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[1.876s] Installing mtr_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[1.877s] writing list of installed files to '/home/daniel/controlbot_ws/build/controller/install.log'
+[1.948s] Invoked command in '/home/daniel/controlbot_ws/src/controller' returned '0': PYTHONPATH=/home/daniel/controlbot_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/controller build --build-base /home/daniel/controlbot_ws/build/controller/build install --record /home/daniel/controlbot_ws/build/controller/install.log --single-version-externally-managed install_data

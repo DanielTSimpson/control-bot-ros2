@@ -1,0 +1,5 @@
+  File "/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller/hw_interface.py", line 56
+    self.serial_port.write(test.tobytes(1,'big')           
+                          ^
+SyntaxError: '(' was never closed
+
