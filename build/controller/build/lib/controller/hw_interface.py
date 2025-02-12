@@ -35,12 +35,13 @@ class HWInterface(Node):
 
     def listener_callback(self, msg):
         mtr_cmds = msg.data.split("_")
-        print(mtr_cmds)
         self.get_logger().info('Received: M1 {}  M2 {}  M3 {}  M4 {}'.format(mtr_cmds[0], mtr_cmds[1], mtr_cmds[2], mtr_cmds[3])) 
         
         for i in range(4):
-
-            direction = int(0)
+            self.serial_port.write(int(float(mtr_cmds[i])).to_bytes(1, 'big'))
+            self.get_logger().info('Sending {} for Motor {}'.format(mtr_cmds[i], i+1))
+            time.sleep(0.1)
+            """direction = int(0)
             
             if int(float(mtr_cmds[i])) > 0: direction = int(1)
             
@@ -51,11 +52,12 @@ class HWInterface(Node):
            
             # invalid bytes: 0000000(0x00) and 11111111(0xFF)
             binary_string = direction + motor_id  + speed 
-            #self.serial_port.write(binary_string.encode())
-            test = int(12)
-            self.serial_port.write(test.to_bytes(2,'big'))
+            binary_string = "255_100_123"
+            self.serial_port.write(binary_string.encode())
+            #test = int(12)
+            #self.serial_port.write(test.to_bytes(2,'big'))
             self.get_logger().info('Sending {} for Motor {}'.format(speed, motor_id))
-            time.sleep(1) 
+            time.sleep(1)""" 
 
 def main(args=None):
     rclpy.init(args=args)

@@ -15,23 +15,39 @@ serial_port = serial.Serial(
 
 # Wait a second to let the port initialize
 time.sleep(1)
-
+mtr_speeds = [75, 125, 200, 254]
+mtr_directions = [1, 0, 1, 0]
+s = 85 
+cmds = [255, 0, s, 0, s, 0, s, 0, s, 255] 
 try:
     while True:
-        
-        # invalid bytes: 0000000(0x00) and 11111111(0xFF)
-       for i in range(4): 
-        # print(i)
-        direction = str(bin(bool(i%2))[2:]) 
-        motor_id = format(i,'02b') 
-        speed = format(f"{5:b}",'05')
-        
-        # print("Direction: " + direction  + " Motor ID: " + motor_id + " Speed: " + speed) 
-        binary_string = direction + motor_id  + speed 
-        serial_port.write(binary_string.encode())
-        
-        # print("Sent: " + binary_string)
-        time.sleep(1)      
+        serial_port.write(bytearray(cmds))
+        print(f"Send: {cmds}")
+        time.sleep(1)
+
+
+
+
+
+
+       #invalid bytes: 0000000(0x00) and 11111111(0xFF)
+       #time.sleep(0.1)
+       #serial_port.write(int(255).to_bytes(1, 'big'))
+       #for i in range(4): 
+       #  serial_port.write(int(mtr_directions[i]).to_bytes(1, 'big'))
+       #  serial_port.write(int(mtr_speeds[i]).to_bytes(1, 'big'))
+       #serial_port.write(int(255).to_bytes(1, 'big'))
+       #results = [255] + mtr_directions + mtr_speeds + [255]
+       #print(f"Sent: {results}")
+       #time.sleep(2)
+       #direction = str(bin(bool(i%2))[2:]) 
+       #motor_id = format(i,'02b') 
+       #speed = format(f"{5:b}",'05')
+       #print("Direction: " + direction  + " Motor ID: " + motor_id + " Speed: " + speed) 
+       #binary_string = direction + motor_id  + speed 
+       #serial_port.write(binary_string.encode())
+       #print("Sent: " + binary_string)
+       #time.sleep(1)      
 
 except KeyboardInterrupt:
     print("Exiting Program")
