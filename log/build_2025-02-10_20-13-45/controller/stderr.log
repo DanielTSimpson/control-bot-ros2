@@ -1,0 +1,5 @@
+  File "/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller/hw_interface.py", line 42
+    self.get_logger().info('Sending {} for Motor {}'.format(mtr_cmds[i], i+1)
+                          ^
+SyntaxError: '(' was never closed
+
