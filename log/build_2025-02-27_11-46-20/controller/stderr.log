@@ -1,0 +1,5 @@
+  File "/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller/hl_ctrl.py", line 29
+    msg.data = '{}_{}_{}_{}'.format(self.inst[self.i]))
+                                                      ^
+SyntaxError: unmatched ')'
+

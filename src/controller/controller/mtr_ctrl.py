@@ -26,17 +26,17 @@ class MotorCtrl(Node):
         self.timer = self.create_timer(1, self.timer_callback)
 
     def listener_callback(self, msg):
-        v, theta = msg.data.split('_')
-        v = float(v)
-        omega = float(theta)
+        v1, v2, v3, v4 = msg.data.split('_')
+        #v = float(v)
+        #omega = float(theta)
 
         # Keep all motor commands between 0 - 30
-        self.mtr1 = v
-        self.mtr2 = v
-        self.mtr3 = v
-        self.mtr4 = v
+        self.mtr1 = v1
+        self.mtr2 = v2
+        self.mtr3 = v3
+        self.mtr4 = v4
 
-        self.get_logger().info('I heard: {} m/s at {} deg'.format(v, theta)) 
+        #self.get_logger().info('I heard: {} m/s at {} deg'.format(v, theta)) 
     
     def timer_callback(self):
         msg = String()
