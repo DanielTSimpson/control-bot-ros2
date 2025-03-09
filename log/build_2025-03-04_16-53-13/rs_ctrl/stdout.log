@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/rs_ctrl/rs_ctrl.egg-info
+writing ../../build/rs_ctrl/rs_ctrl.egg-info/PKG-INFO
+writing dependency_links to ../../build/rs_ctrl/rs_ctrl.egg-info/dependency_links.txt
+writing entry points to ../../build/rs_ctrl/rs_ctrl.egg-info/entry_points.txt
+writing requirements to ../../build/rs_ctrl/rs_ctrl.egg-info/requires.txt
+writing top-level names to ../../build/rs_ctrl/rs_ctrl.egg-info/top_level.txt
+writing manifest file '../../build/rs_ctrl/rs_ctrl.egg-info/SOURCES.txt'
+reading manifest file '../../build/rs_ctrl/rs_ctrl.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/rs_ctrl/rs_ctrl.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/daniel/controlbot_ws/build/rs_ctrl/build
+creating /home/daniel/controlbot_ws/build/rs_ctrl/build/lib
+creating /home/daniel/controlbot_ws/build/rs_ctrl/build/lib/rs_ctrl
+copying rs_ctrl/__init__.py -> /home/daniel/controlbot_ws/build/rs_ctrl/build/lib/rs_ctrl
+copying rs_ctrl/realsense_launch.py -> /home/daniel/controlbot_ws/build/rs_ctrl/build/lib/rs_ctrl
+running install
+running install_lib
+creating /home/daniel/controlbot_ws/install/rs_ctrl/lib/python3.10/site-packages/rs_ctrl
+copying /home/daniel/controlbot_ws/build/rs_ctrl/build/lib/rs_ctrl/__init__.py -> /home/daniel/controlbot_ws/install/rs_ctrl/lib/python3.10/site-packages/rs_ctrl
+copying /home/daniel/controlbot_ws/build/rs_ctrl/build/lib/rs_ctrl/realsense_launch.py -> /home/daniel/controlbot_ws/install/rs_ctrl/lib/python3.10/site-packages/rs_ctrl
+byte-compiling /home/daniel/controlbot_ws/install/rs_ctrl/lib/python3.10/site-packages/rs_ctrl/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/daniel/controlbot_ws/install/rs_ctrl/lib/python3.10/site-packages/rs_ctrl/realsense_launch.py to realsense_launch.cpython-310.pyc
+running install_data
+creating /home/daniel/controlbot_ws/install/rs_ctrl/share/ament_index
+creating /home/daniel/controlbot_ws/install/rs_ctrl/share/ament_index/resource_index
+creating /home/daniel/controlbot_ws/install/rs_ctrl/share/ament_index/resource_index/packages
+copying resource/rs_ctrl -> /home/daniel/controlbot_ws/install/rs_ctrl/share/ament_index/resource_index/packages
+copying package.xml -> /home/daniel/controlbot_ws/install/rs_ctrl/share/rs_ctrl
+running install_egg_info
+Copying ../../build/rs_ctrl/rs_ctrl.egg-info to /home/daniel/controlbot_ws/install/rs_ctrl/lib/python3.10/site-packages/rs_ctrl-0.0.0-py3.10.egg-info
+running install_scripts
+Installing realsense_launch script to /home/daniel/controlbot_ws/install/rs_ctrl/lib/rs_ctrl
+writing list of installed files to '/home/daniel/controlbot_ws/build/rs_ctrl/install.log'

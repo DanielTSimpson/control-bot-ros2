@@ -12,7 +12,6 @@ setup.py
 controller/__init__.py
 controller/hl_ctrl.py
 controller/hw_interface.py
-controller/hw_test.py
 controller/mtr_ctrl.py
 resource/controller
 test/test_copyright.py

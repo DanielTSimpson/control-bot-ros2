@@ -1,5 +1,5 @@
 /*
-   Used to get and apply serial data from a Jetson Orin Nano for the speeds and directions of four motors in the form "<-MT1,-MT2,-MT3,-MT4>"
+   Used to get and apply serial data from a Jetson Orin Nano for the speeds and directions of four motors in the form [DELIMITER, D1, M1, D2, M3, D3, M3, D4, M4, DELIMITER] where each element is printedonce per line of serial data read, where DX is the direction (0, 1) and MX is the motor speed (0-254), where X is the motor ID (1, 2, 3, 4)
    Code borrowed from: https://forum.arduino.cc/t/serial-input-basics-updated/382007/3?_gl=1*1g0j69o*_up*MQ..*_ga*MTAwMjg5MjM4LjE3MzkzMjMzNzg.*_ga_NEXN8H46L5*MTczOTMyMzM3Ny4xLjAuMTczOTMyMzM3Ny4wLjAuMjEzMjAwMDQyNA..
 
 */
@@ -26,10 +26,6 @@ void setup() {
     Serial.println("Could not find Motor Shield. Check wiring.");
     while (1);
   }
-  //myMotor1->run(RELEASE);
-  //myMotor2->run(RELEASE);
-  //myMotor3->run(RELEASE);
-  //myMotor4->run(RELEASE);
 }
 
 
@@ -91,26 +87,16 @@ void setMotors(int mtrCmds[numChars]) {
         if (i == 1) {
           myMotor1->run(mtrDir);
           myMotor1->setSpeed(mtrCmds[i]);
-          Serial.print("Sent for M1: ");
-          Serial.println(mtrCmds[i]);
         } else if (i == 3) {
           myMotor2->run(mtrDir);
           myMotor2->setSpeed(mtrCmds[i]);
-          Serial.print("Sent for M2: ");
-          Serial.println(mtrCmds[i]);
         } else if (i == 5) {
           myMotor3->run(mtrDir);
           myMotor3->setSpeed(mtrCmds[i]);
-          Serial.print("Sent for M3: ");
-          Serial.println(mtrCmds[i]);
         } else if (i == 7) {
           myMotor4->run(mtrDir);
           myMotor4->setSpeed(mtrCmds[i]);
-          Serial.print("Sent for M4: ");
-          Serial.println(mtrCmds[i]);
-          Serial.println("-----");
         }
-       
     }
   }
 }

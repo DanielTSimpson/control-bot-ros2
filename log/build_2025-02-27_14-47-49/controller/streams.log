@@ -1,0 +1,30 @@
+[1.233s] Invoking command in '/home/daniel/controlbot_ws/src/controller': PYTHONPATH=/home/daniel/controlbot_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/controller build --build-base /home/daniel/controlbot_ws/build/controller/build install --record /home/daniel/controlbot_ws/build/controller/install.log --single-version-externally-managed install_data
+[1.720s] running egg_info
+[1.721s] writing ../../build/controller/controller.egg-info/PKG-INFO
+[1.722s] writing dependency_links to ../../build/controller/controller.egg-info/dependency_links.txt
+[1.722s] writing entry points to ../../build/controller/controller.egg-info/entry_points.txt
+[1.722s] writing requirements to ../../build/controller/controller.egg-info/requires.txt
+[1.723s] writing top-level names to ../../build/controller/controller.egg-info/top_level.txt
+[1.726s] reading manifest file '../../build/controller/controller.egg-info/SOURCES.txt'
+[1.727s] adding license file 'LICENSE'
+[1.728s] writing manifest file '../../build/controller/controller.egg-info/SOURCES.txt'
+[1.728s] running build
+[1.728s] running build_py
+[1.729s] copying controller/mtr_ctrl.py -> /home/daniel/controlbot_ws/build/controller/build/lib/controller
+[1.729s] copying controller/hl_ctrl.py -> /home/daniel/controlbot_ws/build/controller/build/lib/controller
+[1.730s] running install
+[1.730s] running install_lib
+[1.732s] copying /home/daniel/controlbot_ws/build/controller/build/lib/controller/mtr_ctrl.py -> /home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller
+[1.732s] copying /home/daniel/controlbot_ws/build/controller/build/lib/controller/hl_ctrl.py -> /home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller
+[1.733s] byte-compiling /home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller/mtr_ctrl.py to mtr_ctrl.cpython-310.pyc
+[1.735s] byte-compiling /home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller/hl_ctrl.py to hl_ctrl.cpython-310.pyc
+[1.736s] running install_data
+[1.736s] running install_egg_info
+[1.740s] removing '/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.740s] Copying ../../build/controller/controller.egg-info to /home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages/controller-0.0.0-py3.10.egg-info
+[1.742s] running install_scripts
+[1.784s] Installing hl_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[1.784s] Installing hw_interface script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[1.784s] Installing mtr_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[1.785s] writing list of installed files to '/home/daniel/controlbot_ws/build/controller/install.log'
+[1.850s] Invoked command in '/home/daniel/controlbot_ws/src/controller' returned '0': PYTHONPATH=/home/daniel/controlbot_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/controller build --build-base /home/daniel/controlbot_ws/build/controller/build install --record /home/daniel/controlbot_ws/build/controller/install.log --single-version-externally-managed install_data
