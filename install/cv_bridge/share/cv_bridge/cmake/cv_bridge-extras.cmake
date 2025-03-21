@@ -1,0 +1,1 @@
+/home/daniel/controlbot_ws/build/cv_bridge/ament_cmake_core/cv_bridge-extras.cmake

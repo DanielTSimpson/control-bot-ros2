@@ -1,0 +1,6 @@
+[console_scripts]
+depth_processing = controller.depth_processing:main
+hl_ctrl = controller.hl_ctrl:main
+hw_interface = controller.hw_interface:main
+mtr_ctrl = controller.mtr_ctrl:main
+

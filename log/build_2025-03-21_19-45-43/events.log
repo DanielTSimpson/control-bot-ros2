@@ -1,0 +1,769 @@
+[0.000000] (-) TimerEvent: {}
+[0.000408] (cv_bridge) JobQueued: {'identifier': 'cv_bridge', 'dependencies': OrderedDict()}
+[0.000728] (image_geometry) JobQueued: {'identifier': 'image_geometry', 'dependencies': OrderedDict()}
+[0.000919] (controller) JobQueued: {'identifier': 'controller', 'dependencies': OrderedDict([('cv_bridge', '/home/daniel/controlbot_ws/install/cv_bridge')])}
+[0.001398] (opencv_tests) JobQueued: {'identifier': 'opencv_tests', 'dependencies': OrderedDict([('cv_bridge', '/home/daniel/controlbot_ws/install/cv_bridge')])}
+[0.001698] (vision_opencv) JobQueued: {'identifier': 'vision_opencv', 'dependencies': OrderedDict([('cv_bridge', '/home/daniel/controlbot_ws/install/cv_bridge'), ('image_geometry', '/home/daniel/controlbot_ws/install/image_geometry')])}
+[0.001949] (cv_bridge) JobStarted: {'identifier': 'cv_bridge'}
+[0.019224] (image_geometry) JobStarted: {'identifier': 'image_geometry'}
+[0.035532] (cv_bridge) JobProgress: {'identifier': 'cv_bridge', 'progress': 'cmake'}
+[0.036777] (cv_bridge) Command: {'cmd': ['/usr/bin/cmake', '/home/daniel/controlbot_ws/src/vision_opencv/cv_bridge', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/daniel/controlbot_ws/install/cv_bridge'], 'cwd': '/home/daniel/controlbot_ws/build/cv_bridge', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64:'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/cv_bridge'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[0.050961] (image_geometry) JobProgress: {'identifier': 'image_geometry', 'progress': 'cmake'}
+[0.052129] (image_geometry) Command: {'cmd': ['/usr/bin/cmake', '/home/daniel/controlbot_ws/src/vision_opencv/image_geometry', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/daniel/controlbot_ws/install/image_geometry'], 'cwd': '/home/daniel/controlbot_ws/build/image_geometry', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64:'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/image_geometry'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[0.099502] (-) TimerEvent: {}
+[0.200382] (-) TimerEvent: {}
+[0.263258] (cv_bridge) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.264118] (image_geometry) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.300683] (-) TimerEvent: {}
+[0.401959] (-) TimerEvent: {}
+[0.459429] (cv_bridge) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.460313] (image_geometry) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.469700] (image_geometry) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[0.470020] (cv_bridge) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[0.502099] (-) TimerEvent: {}
+[0.603082] (-) TimerEvent: {}
+[0.704231] (-) TimerEvent: {}
+[0.718623] (cv_bridge) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[0.719284] (image_geometry) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[0.719518] (cv_bridge) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.723865] (image_geometry) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.804510] (-) TimerEvent: {}
+[0.905591] (-) TimerEvent: {}
+[0.963360] (image_geometry) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.964274] (cv_bridge) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.995052] (image_geometry) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.995599] (cv_bridge) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.996112] (image_geometry) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.996397] (cv_bridge) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.001215] (image_geometry) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[1.001687] (cv_bridge) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[1.005636] (-) TimerEvent: {}
+[1.106405] (-) TimerEvent: {}
+[1.207483] (-) TimerEvent: {}
+[1.264588] (cv_bridge) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[1.265507] (image_geometry) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[1.267374] (cv_bridge) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.268228] (image_geometry) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.307754] (-) TimerEvent: {}
+[1.408912] (-) TimerEvent: {}
+[1.510008] (-) TimerEvent: {}
+[1.532391] (image_geometry) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.533342] (cv_bridge) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.563475] (cv_bridge) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.564386] (cv_bridge) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.567909] (image_geometry) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.568956] (cv_bridge) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/galactic/share/ament_cmake_ros/cmake)\n'}
+[1.569257] (image_geometry) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.573452] (image_geometry) StdoutLine: {'line': b'-- Found ament_cmake_python: 1.1.6 (/opt/ros/galactic/share/ament_cmake_python/cmake)\n'}
+[1.576644] (image_geometry) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/galactic/share/ament_cmake_ros/cmake)\n'}
+[1.610139] (-) TimerEvent: {}
+[1.642986] (cv_bridge) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[1.643870] (cv_bridge) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.649316] (image_geometry) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[1.649823] (image_geometry) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.710347] (-) TimerEvent: {}
+[1.798159] (image_geometry) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.798913] (cv_bridge) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.810459] (-) TimerEvent: {}
+[1.873834] (cv_bridge) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.8.so (found version "3.8.10") \n'}
+[1.888986] (cv_bridge) StdoutLine: {'line': b'-- Boost_VERSION_STRING: 1.71.0\n'}
+[1.901880] (cv_bridge) StdoutLine: {'line': b'-- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: python38 \n'}
+[1.906722] (cv_bridge) StdoutLine: {'line': b'-- Found rcpputils: 2.2.2 (/opt/ros/galactic/share/rcpputils/cmake)\n'}
+[1.910581] (-) TimerEvent: {}
+[1.928211] (cv_bridge) StdoutLine: {'line': b'-- Found sensor_msgs: 2.2.4 (/opt/ros/galactic/share/sensor_msgs/cmake)\n'}
+[1.965369] (cv_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.978243] (cv_bridge) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[2.010753] (-) TimerEvent: {}
+[2.073637] (image_geometry) StdoutLine: {'line': b'-- Found OpenCV: /usr (found version "4.5.4") found components: calib3d core highgui imgproc \n'}
+[2.076286] (image_geometry) StdoutLine: {'line': b'-- Found sensor_msgs: 2.2.4 (/opt/ros/galactic/share/sensor_msgs/cmake)\n'}
+[2.111010] (-) TimerEvent: {}
+[2.137279] (image_geometry) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.150910] (image_geometry) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.3 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[2.175729] (cv_bridge) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[2.211238] (-) TimerEvent: {}
+[2.246384] (cv_bridge) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/galactic/include  \n'}
+[2.311535] (-) TimerEvent: {}
+[2.345003] (image_geometry) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  \n'}
+[2.411797] (-) TimerEvent: {}
+[2.413719] (image_geometry) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/galactic/include  \n'}
+[2.421070] (cv_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.512058] (-) TimerEvent: {}
+[2.591016] (image_geometry) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.612129] (-) TimerEvent: {}
+[2.712790] (-) TimerEvent: {}
+[2.813629] (-) TimerEvent: {}
+[2.914536] (-) TimerEvent: {}
+[2.935429] (image_geometry) StdoutLine: {'line': b"-- Found gtest sources under '/opt/ros/galactic/src/gtest_vendor': C++ tests using 'Google Test' will be built\n"}
+[2.939973] (image_geometry) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[2.995654] (cv_bridge) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY\n'}
+[3.014768] (-) TimerEvent: {}
+[3.115798] (-) TimerEvent: {}
+[3.181342] (image_geometry) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[3.182343] (image_geometry) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[3.199483] (cv_bridge) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success\n'}
+[3.201129] (cv_bridge) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY\n'}
+[3.216002] (-) TimerEvent: {}
+[3.317079] (-) TimerEvent: {}
+[3.418224] (-) TimerEvent: {}
+[3.440693] (cv_bridge) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success\n'}
+[3.441858] (cv_bridge) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_DEPRECATED_ATTR\n'}
+[3.518251] (-) TimerEvent: {}
+[3.674931] (-) TimerEvent: {}
+[3.712929] (image_geometry) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[3.713468] (image_geometry) StdoutLine: {'line': b'-- Check if compiler accepts -pthread\n'}
+[3.775277] (-) TimerEvent: {}
+[3.834313] (cv_bridge) StdoutLine: {'line': b'-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success\n'}
+[3.875338] (-) TimerEvent: {}
+[3.889694] (cv_bridge) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[3.894064] (cv_bridge) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.8.so (found suitable version "3.8.10", minimum required is "3.8") \n'}
+[3.975429] (-) TimerEvent: {}
+[4.030659] (image_geometry) StdoutLine: {'line': b'-- Check if compiler accepts -pthread - yes\n'}
+[4.033266] (image_geometry) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[4.075539] (-) TimerEvent: {}
+[4.176258] (-) TimerEvent: {}
+[4.229922] (image_geometry) StdoutLine: {'line': b'-- Configuring done\n'}
+[4.273031] (image_geometry) StdoutLine: {'line': b'-- Generating done\n'}
+[4.276297] (-) TimerEvent: {}
+[4.293373] (image_geometry) StdoutLine: {'line': b'-- Build files have been written to: /home/daniel/controlbot_ws/build/image_geometry\n'}
+[4.307123] (cv_bridge) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)\n'}
+[4.338573] (image_geometry) CommandEnded: {'returncode': 0}
+[4.340152] (image_geometry) JobProgress: {'identifier': 'image_geometry', 'progress': 'build'}
+[4.342102] (image_geometry) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/daniel/controlbot_ws/build/image_geometry', '--', '-j6', '-l6'], 'cwd': '/home/daniel/controlbot_ws/build/image_geometry', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64:'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/image_geometry'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[4.376512] (-) TimerEvent: {}
+[4.474447] (image_geometry) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target ament_cmake_python_symlink_image_geometry\x1b[0m\n'}
+[4.475505] (image_geometry) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target image_geometry\x1b[0m\n'}
+[4.475703] (image_geometry) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target gtest_main\x1b[0m\n'}
+[4.475870] (image_geometry) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target gtest\x1b[0m\n'}
+[4.476591] (-) TimerEvent: {}
+[4.501004] (cv_bridge) StdoutLine: {'line': b"-- Found gtest sources under '/opt/ros/galactic/src/gtest_vendor': C++ tests using 'Google Test' will be built\n"}
+[4.510603] (cv_bridge) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[4.529649] (image_geometry) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o\x1b[0m\n'}
+[4.530639] (image_geometry) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding CXX object CMakeFiles/image_geometry.dir/src/stereo_camera_model.cpp.o\x1b[0m\n'}
+[4.531004] (image_geometry) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o\x1b[0m\n'}
+[4.534888] (image_geometry) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/image_geometry.dir/src/pinhole_camera_model.cpp.o\x1b[0m\n'}
+[4.561649] (image_geometry) StdoutLine: {'line': b'[ 36%] Built target ament_cmake_python_symlink_image_geometry\n'}
+[4.576908] (-) TimerEvent: {}
+[4.594331] (image_geometry) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target ament_cmake_python_build_image_geometry_egg\x1b[0m\n'}
+[4.677161] (-) TimerEvent: {}
+[4.778522] (-) TimerEvent: {}
+[4.879961] (-) TimerEvent: {}
+[4.958987] (cv_bridge) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[4.961441] (cv_bridge) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[4.980293] (-) TimerEvent: {}
+[5.155966] (-) TimerEvent: {}
+[5.286237] (-) TimerEvent: {}
+[5.305310] (image_geometry) StdoutLine: {'line': b'running egg_info\n'}
+[5.305953] (image_geometry) StdoutLine: {'line': b'creating image_geometry.egg-info\n'}
+[5.306174] (image_geometry) StdoutLine: {'line': b'writing image_geometry.egg-info/PKG-INFO\n'}
+[5.306355] (image_geometry) StdoutLine: {'line': b'writing dependency_links to image_geometry.egg-info/dependency_links.txt\n'}
+[5.306516] (image_geometry) StdoutLine: {'line': b'writing top-level names to image_geometry.egg-info/top_level.txt\n'}
+[5.306671] (image_geometry) StdoutLine: {'line': b"writing manifest file 'image_geometry.egg-info/SOURCES.txt'\n"}
+[5.376129] (-) TimerEvent: {}
+[5.391915] (image_geometry) StdoutLine: {'line': b"reading manifest file 'image_geometry.egg-info/SOURCES.txt'\n"}
+[5.394282] (image_geometry) StdoutLine: {'line': b"writing manifest file 'image_geometry.egg-info/SOURCES.txt'\n"}
+[5.476431] (-) TimerEvent: {}
+[5.543906] (cv_bridge) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed\n'}
+[5.545516] (cv_bridge) StdoutLine: {'line': b'-- Check if compiler accepts -pthread\n'}
+[5.576766] (-) TimerEvent: {}
+[5.592995] (image_geometry) StdoutLine: {'line': b'[ 36%] Built target ament_cmake_python_build_image_geometry_egg\n'}
+[5.677059] (-) TimerEvent: {}
+[5.778269] (-) TimerEvent: {}
+[5.825216] (cv_bridge) StdoutLine: {'line': b'-- Check if compiler accepts -pthread - yes\n'}
+[5.829313] (cv_bridge) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[5.878514] (-) TimerEvent: {}
+[5.979593] (-) TimerEvent: {}
+[6.080726] (-) TimerEvent: {}
+[6.181824] (-) TimerEvent: {}
+[6.282964] (-) TimerEvent: {}
+[6.384137] (-) TimerEvent: {}
+[6.485567] (-) TimerEvent: {}
+[6.586940] (-) TimerEvent: {}
+[6.688702] (-) TimerEvent: {}
+[6.723557] (image_geometry) StdoutLine: {'line': b'[ 45%] \x1b[32m\x1b[1mLinking CXX static library libgtest_main.a\x1b[0m\n'}
+[6.789041] (-) TimerEvent: {}
+[6.924731] (-) TimerEvent: {}
+[6.971652] (image_geometry) StdoutLine: {'line': b'[ 45%] Built target gtest_main\n'}
+[7.019818] (-) TimerEvent: {}
+[7.121757] (-) TimerEvent: {}
+[7.223094] (-) TimerEvent: {}
+[7.324136] (-) TimerEvent: {}
+[7.425187] (-) TimerEvent: {}
+[7.526197] (-) TimerEvent: {}
+[7.627240] (-) TimerEvent: {}
+[7.728246] (-) TimerEvent: {}
+[7.829397] (-) TimerEvent: {}
+[7.930562] (-) TimerEvent: {}
+[8.031690] (-) TimerEvent: {}
+[8.132807] (-) TimerEvent: {}
+[8.234263] (-) TimerEvent: {}
+[8.335294] (-) TimerEvent: {}
+[8.436259] (-) TimerEvent: {}
+[8.537282] (-) TimerEvent: {}
+[8.714180] (-) TimerEvent: {}
+[8.814521] (image_geometry) StdoutLine: {'line': b'[ 54%] \x1b[32m\x1b[1mLinking CXX shared library libimage_geometry.so\x1b[0m\n'}
+[8.815338] (-) TimerEvent: {}
+[8.916081] (-) TimerEvent: {}
+[9.017207] (-) TimerEvent: {}
+[9.112729] (image_geometry) StdoutLine: {'line': b'[ 54%] Built target image_geometry\n'}
+[9.117365] (-) TimerEvent: {}
+[9.182433] (cv_bridge) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.217619] (-) TimerEvent: {}
+[9.222558] (cv_bridge) StdoutLine: {'line': b'-- Generating done\n'}
+[9.238724] (cv_bridge) StdoutLine: {'line': b'-- Build files have been written to: /home/daniel/controlbot_ws/build/cv_bridge\n'}
+[9.269610] (cv_bridge) CommandEnded: {'returncode': 0}
+[9.272205] (cv_bridge) JobProgress: {'identifier': 'cv_bridge', 'progress': 'build'}
+[9.273332] (cv_bridge) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/daniel/controlbot_ws/build/cv_bridge', '--', '-j6', '-l6'], 'cwd': '/home/daniel/controlbot_ws/build/cv_bridge', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64:'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/cv_bridge'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[9.317815] (-) TimerEvent: {}
+[9.405631] (cv_bridge) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target ament_cmake_python_symlink_cv_bridge\x1b[0m\n'}
+[9.406443] (cv_bridge) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target gtest\x1b[0m\n'}
+[9.406647] (cv_bridge) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target cv_bridge\x1b[0m\n'}
+[9.407042] (cv_bridge) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target gtest_main\x1b[0m\n'}
+[9.438558] (-) TimerEvent: {}
+[9.495534] (cv_bridge) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o\x1b[0m\n'}
+[9.496215] (cv_bridge) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o\x1b[0m\n'}
+[9.496422] (cv_bridge) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_symlink_cv_bridge\n'}
+[9.496601] (cv_bridge) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding CXX object src/CMakeFiles/cv_bridge.dir/cv_bridge.cpp.o\x1b[0m\n'}
+[9.497307] (cv_bridge) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object src/CMakeFiles/cv_bridge.dir/rgb_colors.cpp.o\x1b[0m\n'}
+[9.519339] (cv_bridge) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target ament_cmake_python_build_cv_bridge_egg\x1b[0m\n'}
+[9.532549] (-) TimerEvent: {}
+[9.633870] (-) TimerEvent: {}
+[9.734870] (-) TimerEvent: {}
+[9.835917] (-) TimerEvent: {}
+[9.937178] (-) TimerEvent: {}
+[10.038202] (-) TimerEvent: {}
+[10.139250] (-) TimerEvent: {}
+[10.199563] (cv_bridge) StdoutLine: {'line': b'running egg_info\n'}
+[10.202990] (cv_bridge) StdoutLine: {'line': b'creating cv_bridge.egg-info\n'}
+[10.204089] (cv_bridge) StdoutLine: {'line': b'writing cv_bridge.egg-info/PKG-INFO\n'}
+[10.205439] (cv_bridge) StdoutLine: {'line': b'writing dependency_links to cv_bridge.egg-info/dependency_links.txt\n'}
+[10.206335] (cv_bridge) StdoutLine: {'line': b'writing top-level names to cv_bridge.egg-info/top_level.txt\n'}
+[10.212048] (cv_bridge) StdoutLine: {'line': b"writing manifest file 'cv_bridge.egg-info/SOURCES.txt'\n"}
+[10.239493] (-) TimerEvent: {}
+[10.305083] (cv_bridge) StdoutLine: {'line': b"reading manifest file 'cv_bridge.egg-info/SOURCES.txt'\n"}
+[10.307577] (cv_bridge) StdoutLine: {'line': b"writing manifest file 'cv_bridge.egg-info/SOURCES.txt'\n"}
+[10.339825] (-) TimerEvent: {}
+[10.441453] (-) TimerEvent: {}
+[10.501119] (cv_bridge) StdoutLine: {'line': b'[ 25%] Built target ament_cmake_python_build_cv_bridge_egg\n'}
+[10.541758] (-) TimerEvent: {}
+[10.643074] (-) TimerEvent: {}
+[10.744304] (-) TimerEvent: {}
+[10.845622] (-) TimerEvent: {}
+[10.946869] (-) TimerEvent: {}
+[11.048106] (-) TimerEvent: {}
+[11.149381] (-) TimerEvent: {}
+[11.250609] (-) TimerEvent: {}
+[11.351820] (-) TimerEvent: {}
+[11.453046] (-) TimerEvent: {}
+[11.554243] (-) TimerEvent: {}
+[11.655444] (-) TimerEvent: {}
+[11.756678] (-) TimerEvent: {}
+[11.857812] (-) TimerEvent: {}
+[11.862891] (cv_bridge) StdoutLine: {'line': b'[ 31%] \x1b[32m\x1b[1mLinking CXX static library libgtest_main.a\x1b[0m\n'}
+[11.958121] (-) TimerEvent: {}
+[12.059299] (-) TimerEvent: {}
+[12.124983] (cv_bridge) StdoutLine: {'line': b'[ 31%] Built target gtest_main\n'}
+[12.159595] (-) TimerEvent: {}
+[12.261240] (-) TimerEvent: {}
+[12.362419] (-) TimerEvent: {}
+[12.463590] (-) TimerEvent: {}
+[12.564779] (-) TimerEvent: {}
+[12.665922] (-) TimerEvent: {}
+[12.767099] (-) TimerEvent: {}
+[12.868256] (-) TimerEvent: {}
+[12.969486] (-) TimerEvent: {}
+[13.070635] (-) TimerEvent: {}
+[13.172356] (-) TimerEvent: {}
+[13.273837] (-) TimerEvent: {}
+[13.375273] (-) TimerEvent: {}
+[13.476453] (-) TimerEvent: {}
+[13.577700] (-) TimerEvent: {}
+[13.678914] (-) TimerEvent: {}
+[13.780118] (-) TimerEvent: {}
+[13.854389] (image_geometry) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking CXX static library libgtest.a\x1b[0m\n'}
+[13.880398] (-) TimerEvent: {}
+[13.981728] (-) TimerEvent: {}
+[14.082824] (-) TimerEvent: {}
+[14.184030] (-) TimerEvent: {}
+[14.194016] (image_geometry) StdoutLine: {'line': b'[ 63%] Built target gtest\n'}
+[14.227823] (image_geometry) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target image_geometry-utest\x1b[0m\n'}
+[14.228800] (image_geometry) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target image_geometry-utest-equi\x1b[0m\n'}
+[14.284311] (-) TimerEvent: {}
+[14.292960] (image_geometry) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object test/CMakeFiles/image_geometry-utest-equi.dir/utest_equi.cpp.o\x1b[0m\n'}
+[14.298698] (image_geometry) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object test/CMakeFiles/image_geometry-utest.dir/utest.cpp.o\x1b[0m\n'}
+[14.384716] (-) TimerEvent: {}
+[14.485922] (-) TimerEvent: {}
+[14.587098] (-) TimerEvent: {}
+[14.688328] (-) TimerEvent: {}
+[14.789671] (-) TimerEvent: {}
+[14.890870] (-) TimerEvent: {}
+[15.031333] (-) TimerEvent: {}
+[15.141315] (-) TimerEvent: {}
+[15.242963] (-) TimerEvent: {}
+[15.344353] (-) TimerEvent: {}
+[15.445697] (-) TimerEvent: {}
+[15.546997] (-) TimerEvent: {}
+[15.648659] (-) TimerEvent: {}
+[15.750246] (-) TimerEvent: {}
+[15.851439] (-) TimerEvent: {}
+[15.952588] (-) TimerEvent: {}
+[16.053747] (-) TimerEvent: {}
+[16.154885] (-) TimerEvent: {}
+[16.256024] (-) TimerEvent: {}
+[16.357153] (-) TimerEvent: {}
+[16.458264] (-) TimerEvent: {}
+[16.559402] (-) TimerEvent: {}
+[16.660523] (-) TimerEvent: {}
+[16.761687] (-) TimerEvent: {}
+[16.862781] (-) TimerEvent: {}
+[16.963868] (-) TimerEvent: {}
+[17.065024] (-) TimerEvent: {}
+[17.166153] (-) TimerEvent: {}
+[17.267275] (-) TimerEvent: {}
+[17.368403] (-) TimerEvent: {}
+[17.469583] (-) TimerEvent: {}
+[17.570724] (-) TimerEvent: {}
+[17.671886] (-) TimerEvent: {}
+[17.773142] (-) TimerEvent: {}
+[17.874408] (-) TimerEvent: {}
+[17.975605] (-) TimerEvent: {}
+[18.076816] (-) TimerEvent: {}
+[18.177996] (-) TimerEvent: {}
+[18.279145] (-) TimerEvent: {}
+[18.380305] (-) TimerEvent: {}
+[18.481552] (-) TimerEvent: {}
+[18.567118] (cv_bridge) StdoutLine: {'line': b'[ 37%] \x1b[32m\x1b[1mLinking CXX static library libgtest.a\x1b[0m\n'}
+[18.581826] (-) TimerEvent: {}
+[18.683041] (-) TimerEvent: {}
+[18.784256] (-) TimerEvent: {}
+[18.885436] (-) TimerEvent: {}
+[18.903617] (cv_bridge) StdoutLine: {'line': b'[ 37%] Built target gtest\n'}
+[18.985710] (-) TimerEvent: {}
+[19.086820] (-) TimerEvent: {}
+[19.187924] (-) TimerEvent: {}
+[19.289150] (-) TimerEvent: {}
+[19.354585] (image_geometry) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX executable image_geometry-utest-equi\x1b[0m\n'}
+[19.389420] (-) TimerEvent: {}
+[19.490849] (-) TimerEvent: {}
+[19.557552] (image_geometry) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable image_geometry-utest\x1b[0m\n'}
+[19.591116] (-) TimerEvent: {}
+[19.692275] (-) TimerEvent: {}
+[19.793465] (-) TimerEvent: {}
+[19.882021] (image_geometry) StdoutLine: {'line': b'[100%] Built target image_geometry-utest-equi\n'}
+[19.893573] (-) TimerEvent: {}
+[20.125674] (-) TimerEvent: {}
+[20.129529] (image_geometry) StdoutLine: {'line': b'[100%] Built target image_geometry-utest\n'}
+[20.225922] (-) TimerEvent: {}
+[20.281892] (image_geometry) CommandEnded: {'returncode': 0}
+[20.284576] (image_geometry) JobProgress: {'identifier': 'image_geometry', 'progress': 'install'}
+[20.320191] (image_geometry) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/daniel/controlbot_ws/build/image_geometry'], 'cwd': '/home/daniel/controlbot_ws/build/image_geometry', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64:'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/image_geometry'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[20.329840] (-) TimerEvent: {}
+[20.355161] (image_geometry) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[20.356030] (image_geometry) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[20.356986] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/environment/pythonpath.sh\n'}
+[20.385364] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/environment/pythonpath.dsv\n'}
+[20.412500] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages//image_geometry.egg-info/PKG-INFO\n'}
+[20.429989] (-) TimerEvent: {}
+[20.439510] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages//image_geometry.egg-info/SOURCES.txt\n'}
+[20.466193] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages//image_geometry.egg-info/dependency_links.txt\n'}
+[20.494296] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages//image_geometry.egg-info/top_level.txt\n'}
+[20.522337] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages/image_geometry/__init__.py\n'}
+[20.530080] (-) TimerEvent: {}
+[20.549970] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages/image_geometry/cameramodels.py\n'}
+[20.580650] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/include/image_geometry/pinhole_camera_model.h\n'}
+[20.608637] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/include/image_geometry/stereo_camera_model.h\n'}
+[20.630295] (-) TimerEvent: {}
+[20.636079] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/include/image_geometry/visibility_control.hpp\n'}
+[20.664360] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/lib/libimage_geometry.so\n'}
+[20.692427] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/environment/library_path.sh\n'}
+[20.719973] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/environment/library_path.dsv\n'}
+[20.730443] (-) TimerEvent: {}
+[20.747128] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/ament_index/resource_index/package_run_dependencies/image_geometry\n'}
+[20.775586] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/ament_index/resource_index/parent_prefix_path/image_geometry\n'}
+[20.802838] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/environment/ament_prefix_path.sh\n'}
+[20.830483] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/environment/ament_prefix_path.dsv\n'}
+[20.831269] (-) TimerEvent: {}
+[20.857776] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/environment/path.sh\n'}
+[20.885549] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/environment/path.dsv\n'}
+[20.912933] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/local_setup.bash\n'}
+[20.931517] (-) TimerEvent: {}
+[20.940935] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/local_setup.sh\n'}
+[20.968297] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/local_setup.zsh\n'}
+[20.995963] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/local_setup.dsv\n'}
+[21.023334] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/package.dsv\n'}
+[21.031605] (-) TimerEvent: {}
+[21.052009] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/ament_index/resource_index/packages/image_geometry\n'}
+[21.080748] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[21.107459] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[21.131813] (-) TimerEvent: {}
+[21.135245] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[21.163065] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/cmake/image_geometryConfig.cmake\n'}
+[21.190852] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/cmake/image_geometryConfig-version.cmake\n'}
+[21.217251] (image_geometry) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/image_geometry/share/image_geometry/package.xml\n'}
+[21.231992] (-) TimerEvent: {}
+[21.320931] (image_geometry) StdoutLine: {'line': b"Listing '/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages/image_geometry'...\n"}
+[21.321643] (image_geometry) StdoutLine: {'line': b"Compiling '/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages/image_geometry/__init__.py'...\n"}
+[21.321899] (image_geometry) StdoutLine: {'line': b"Compiling '/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages/image_geometry/cameramodels.py'...\n"}
+[21.332163] (-) TimerEvent: {}
+[21.345004] (image_geometry) CommandEnded: {'returncode': 0}
+[21.419894] (image_geometry) JobEnded: {'identifier': 'image_geometry', 'rc': 0}
+[21.432241] (-) TimerEvent: {}
+[21.532872] (-) TimerEvent: {}
+[21.633902] (-) TimerEvent: {}
+[21.735088] (-) TimerEvent: {}
+[21.836228] (-) TimerEvent: {}
+[21.937336] (-) TimerEvent: {}
+[22.038417] (-) TimerEvent: {}
+[22.139515] (-) TimerEvent: {}
+[22.240586] (-) TimerEvent: {}
+[22.341695] (-) TimerEvent: {}
+[22.442795] (-) TimerEvent: {}
+[22.543930] (-) TimerEvent: {}
+[22.568446] (cv_bridge) StdoutLine: {'line': b'[ 43%] \x1b[32m\x1b[1mLinking CXX shared library libcv_bridge.so\x1b[0m\n'}
+[22.644213] (-) TimerEvent: {}
+[22.745399] (-) TimerEvent: {}
+[22.846532] (-) TimerEvent: {}
+[22.947718] (-) TimerEvent: {}
+[22.970948] (cv_bridge) StdoutLine: {'line': b'[ 43%] Built target cv_bridge\n'}
+[23.000499] (cv_bridge) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target cv_bridge-utest\x1b[0m\n'}
+[23.001484] (cv_bridge) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target cv_bridge_boost\x1b[0m\n'}
+[23.047916] (-) TimerEvent: {}
+[23.078307] (cv_bridge) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object src/CMakeFiles/cv_bridge_boost.dir/module.cpp.o\x1b[0m\n'}
+[23.079306] (cv_bridge) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object src/CMakeFiles/cv_bridge_boost.dir/module_opencv3.cpp.o\x1b[0m\n'}
+[23.090881] (cv_bridge) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object test/CMakeFiles/cv_bridge-utest.dir/utest.cpp.o\x1b[0m\n'}
+[23.094422] (cv_bridge) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object test/CMakeFiles/cv_bridge-utest.dir/utest2.cpp.o\x1b[0m\n'}
+[23.096473] (cv_bridge) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object test/CMakeFiles/cv_bridge-utest.dir/test_endian.cpp.o\x1b[0m\n'}
+[23.097946] (cv_bridge) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object test/CMakeFiles/cv_bridge-utest.dir/test_compression.cpp.o\x1b[0m\n'}
+[23.148245] (-) TimerEvent: {}
+[23.249512] (-) TimerEvent: {}
+[23.350746] (-) TimerEvent: {}
+[23.451986] (-) TimerEvent: {}
+[23.553325] (-) TimerEvent: {}
+[23.654626] (-) TimerEvent: {}
+[23.756244] (-) TimerEvent: {}
+[23.857650] (-) TimerEvent: {}
+[23.958963] (-) TimerEvent: {}
+[24.060355] (-) TimerEvent: {}
+[24.161716] (-) TimerEvent: {}
+[24.263040] (-) TimerEvent: {}
+[24.364392] (-) TimerEvent: {}
+[24.465817] (-) TimerEvent: {}
+[24.567143] (-) TimerEvent: {}
+[24.668760] (-) TimerEvent: {}
+[24.770023] (-) TimerEvent: {}
+[24.871592] (-) TimerEvent: {}
+[24.972993] (-) TimerEvent: {}
+[25.074272] (-) TimerEvent: {}
+[25.227408] (-) TimerEvent: {}
+[25.328822] (-) TimerEvent: {}
+[25.430233] (-) TimerEvent: {}
+[25.531534] (-) TimerEvent: {}
+[25.632914] (-) TimerEvent: {}
+[25.734210] (-) TimerEvent: {}
+[25.835629] (-) TimerEvent: {}
+[25.936953] (-) TimerEvent: {}
+[26.038326] (-) TimerEvent: {}
+[26.140029] (-) TimerEvent: {}
+[26.241508] (-) TimerEvent: {}
+[26.342789] (-) TimerEvent: {}
+[26.444131] (-) TimerEvent: {}
+[26.545572] (-) TimerEvent: {}
+[26.646963] (-) TimerEvent: {}
+[26.748272] (-) TimerEvent: {}
+[26.849959] (-) TimerEvent: {}
+[26.951883] (-) TimerEvent: {}
+[27.053589] (-) TimerEvent: {}
+[27.155363] (-) TimerEvent: {}
+[27.257890] (-) TimerEvent: {}
+[27.359785] (-) TimerEvent: {}
+[27.461546] (-) TimerEvent: {}
+[27.563188] (-) TimerEvent: {}
+[27.664928] (-) TimerEvent: {}
+[27.766739] (-) TimerEvent: {}
+[27.816962] (cv_bridge) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding CXX object test/CMakeFiles/cv_bridge-utest.dir/test_rgb_colors.cpp.o\x1b[0m\n'}
+[27.867110] (-) TimerEvent: {}
+[27.968762] (-) TimerEvent: {}
+[28.070323] (-) TimerEvent: {}
+[28.171959] (-) TimerEvent: {}
+[28.273111] (-) TimerEvent: {}
+[28.374316] (-) TimerEvent: {}
+[28.475464] (-) TimerEvent: {}
+[28.576662] (-) TimerEvent: {}
+[28.677810] (-) TimerEvent: {}
+[28.778950] (-) TimerEvent: {}
+[28.880088] (-) TimerEvent: {}
+[28.981278] (-) TimerEvent: {}
+[29.082425] (-) TimerEvent: {}
+[29.183549] (-) TimerEvent: {}
+[29.284726] (-) TimerEvent: {}
+[29.385855] (-) TimerEvent: {}
+[29.486966] (-) TimerEvent: {}
+[29.588094] (-) TimerEvent: {}
+[29.689260] (-) TimerEvent: {}
+[29.790395] (-) TimerEvent: {}
+[29.891534] (-) TimerEvent: {}
+[29.992677] (-) TimerEvent: {}
+[30.093800] (-) TimerEvent: {}
+[30.195008] (-) TimerEvent: {}
+[30.296122] (-) TimerEvent: {}
+[30.397285] (-) TimerEvent: {}
+[30.498455] (-) TimerEvent: {}
+[30.599600] (-) TimerEvent: {}
+[30.700833] (-) TimerEvent: {}
+[30.801991] (-) TimerEvent: {}
+[30.903117] (-) TimerEvent: {}
+[31.004235] (-) TimerEvent: {}
+[31.105446] (-) TimerEvent: {}
+[31.206615] (-) TimerEvent: {}
+[31.307793] (-) TimerEvent: {}
+[31.408948] (-) TimerEvent: {}
+[31.510070] (-) TimerEvent: {}
+[31.611161] (-) TimerEvent: {}
+[31.712246] (-) TimerEvent: {}
+[31.813403] (-) TimerEvent: {}
+[31.914471] (-) TimerEvent: {}
+[32.015584] (-) TimerEvent: {}
+[32.116818] (-) TimerEvent: {}
+[32.218014] (-) TimerEvent: {}
+[32.244136] (cv_bridge) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking CXX shared library boost/cv_bridge_boost.so\x1b[0m\n'}
+[32.318273] (-) TimerEvent: {}
+[32.419454] (-) TimerEvent: {}
+[32.520669] (-) TimerEvent: {}
+[32.586191] (cv_bridge) StdoutLine: {'line': b'[ 93%] Built target cv_bridge_boost\n'}
+[32.620719] (-) TimerEvent: {}
+[32.721683] (-) TimerEvent: {}
+[32.822761] (-) TimerEvent: {}
+[32.923916] (-) TimerEvent: {}
+[33.025123] (-) TimerEvent: {}
+[33.126261] (-) TimerEvent: {}
+[33.227369] (-) TimerEvent: {}
+[33.328543] (-) TimerEvent: {}
+[33.429768] (-) TimerEvent: {}
+[33.530994] (-) TimerEvent: {}
+[33.632214] (-) TimerEvent: {}
+[33.733488] (-) TimerEvent: {}
+[33.834662] (-) TimerEvent: {}
+[33.935768] (-) TimerEvent: {}
+[34.036837] (-) TimerEvent: {}
+[34.137970] (-) TimerEvent: {}
+[34.239133] (-) TimerEvent: {}
+[34.340366] (-) TimerEvent: {}
+[34.441563] (-) TimerEvent: {}
+[34.542693] (-) TimerEvent: {}
+[34.643873] (-) TimerEvent: {}
+[34.745070] (-) TimerEvent: {}
+[34.846276] (-) TimerEvent: {}
+[34.908878] (cv_bridge) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable cv_bridge-utest\x1b[0m\n'}
+[34.946491] (-) TimerEvent: {}
+[35.047519] (-) TimerEvent: {}
+[35.169063] (-) TimerEvent: {}
+[35.270154] (-) TimerEvent: {}
+[35.371248] (-) TimerEvent: {}
+[35.472333] (-) TimerEvent: {}
+[35.473414] (cv_bridge) StdoutLine: {'line': b'[100%] Built target cv_bridge-utest\n'}
+[35.572573] (-) TimerEvent: {}
+[35.626407] (cv_bridge) CommandEnded: {'returncode': 0}
+[35.629090] (cv_bridge) JobProgress: {'identifier': 'cv_bridge', 'progress': 'install'}
+[35.629834] (cv_bridge) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/daniel/controlbot_ws/build/cv_bridge'], 'cwd': '/home/daniel/controlbot_ws/build/cv_bridge', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64:'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/cv_bridge'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[35.664033] (cv_bridge) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[35.665129] (cv_bridge) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[35.666050] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/pythonpath.sh\n'}
+[35.672599] (-) TimerEvent: {}
+[35.692260] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/pythonpath.dsv\n'}
+[35.720741] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages//cv_bridge.egg-info/PKG-INFO\n'}
+[35.746651] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages//cv_bridge.egg-info/SOURCES.txt\n'}
+[35.771152] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages//cv_bridge.egg-info/dependency_links.txt\n'}
+[35.772669] (-) TimerEvent: {}
+[35.798248] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages//cv_bridge.egg-info/top_level.txt\n'}
+[35.825362] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/__init__.py\n'}
+[35.850077] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/core.py\n'}
+[35.872761] (-) TimerEvent: {}
+[35.875046] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/lib/libcv_bridge.so\n'}
+[35.901189] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/include/cv_bridge/cv_bridge_export.h\n'}
+[35.930190] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/boost//cv_bridge_boost.so\n'}
+[35.956140] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/library_path.sh\n'}
+[35.972868] (-) TimerEvent: {}
+[35.982053] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/library_path.dsv\n'}
+[36.009030] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/include/cv_bridge/cv_bridge.h\n'}
+[36.035342] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/include/cv_bridge/rgb_colors.h\n'}
+[36.062435] (cv_bridge) StdoutLine: {'line': b'-- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/libcv_bridge.so\n'}
+[36.063506] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/ament_index/resource_index/package_run_dependencies/cv_bridge\n'}
+[36.072966] (-) TimerEvent: {}
+[36.089396] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/ament_index/resource_index/parent_prefix_path/cv_bridge\n'}
+[36.116648] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/ament_prefix_path.sh\n'}
+[36.143104] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/ament_prefix_path.dsv\n'}
+[36.167709] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/path.sh\n'}
+[36.173057] (-) TimerEvent: {}
+[36.192988] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/path.dsv\n'}
+[36.219856] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/local_setup.bash\n'}
+[36.244366] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/local_setup.sh\n'}
+[36.270778] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/local_setup.zsh\n'}
+[36.273149] (-) TimerEvent: {}
+[36.295119] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/local_setup.dsv\n'}
+[36.320295] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/package.dsv\n'}
+[36.346423] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/ament_index/resource_index/packages/cv_bridge\n'}
+[36.371373] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridge-extras.cmake\n'}
+[36.373245] (-) TimerEvent: {}
+[36.396252] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[36.422298] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[36.447472] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[36.471562] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridgeConfig.cmake\n'}
+[36.473343] (-) TimerEvent: {}
+[36.495884] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridgeConfig-version.cmake\n'}
+[36.522274] (cv_bridge) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/package.xml\n'}
+[36.573439] (-) TimerEvent: {}
+[36.624525] (cv_bridge) StdoutLine: {'line': b"Listing '/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge'...\n"}
+[36.624881] (cv_bridge) StdoutLine: {'line': b"Compiling '/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/__init__.py'...\n"}
+[36.625152] (cv_bridge) StdoutLine: {'line': b"Listing '/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/boost'...\n"}
+[36.625399] (cv_bridge) StdoutLine: {'line': b"Compiling '/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/core.py'...\n"}
+[36.648107] (cv_bridge) CommandEnded: {'returncode': 0}
+[36.673928] (-) TimerEvent: {}
+[36.714827] (cv_bridge) JobEnded: {'identifier': 'cv_bridge', 'rc': 0}
+[36.717888] (controller) JobStarted: {'identifier': 'controller'}
+[36.739508] (opencv_tests) JobStarted: {'identifier': 'opencv_tests'}
+[36.765869] (vision_opencv) JobStarted: {'identifier': 'vision_opencv'}
+[36.774849] (-) TimerEvent: {}
+[36.875641] (-) TimerEvent: {}
+[36.976730] (-) TimerEvent: {}
+[37.077457] (-) TimerEvent: {}
+[37.177936] (-) TimerEvent: {}
+[37.278351] (-) TimerEvent: {}
+[37.378736] (-) TimerEvent: {}
+[37.479397] (-) TimerEvent: {}
+[37.580654] (-) TimerEvent: {}
+[37.681475] (-) TimerEvent: {}
+[37.781948] (-) TimerEvent: {}
+[37.882321] (-) TimerEvent: {}
+[37.982699] (-) TimerEvent: {}
+[38.024018] (vision_opencv) JobProgress: {'identifier': 'vision_opencv', 'progress': 'cmake'}
+[38.025677] (vision_opencv) Command: {'cmd': ['/usr/bin/cmake', '/home/daniel/controlbot_ws/src/vision_opencv/vision_opencv', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/daniel/controlbot_ws/install/vision_opencv'], 'cwd': '/home/daniel/controlbot_ws/build/vision_opencv', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/vision_opencv'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[38.083097] (-) TimerEvent: {}
+[38.174774] (vision_opencv) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[38.183142] (-) TimerEvent: {}
+[38.283909] (-) TimerEvent: {}
+[38.369994] (vision_opencv) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[38.380359] (vision_opencv) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[38.383958] (-) TimerEvent: {}
+[38.484665] (-) TimerEvent: {}
+[38.585625] (-) TimerEvent: {}
+[38.631891] (vision_opencv) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[38.634872] (vision_opencv) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[38.685827] (-) TimerEvent: {}
+[38.786820] (-) TimerEvent: {}
+[38.887812] (-) TimerEvent: {}
+[38.899406] (vision_opencv) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[38.915526] (vision_opencv) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[38.916152] (vision_opencv) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[38.923101] (vision_opencv) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[38.988020] (-) TimerEvent: {}
+[39.089160] (-) TimerEvent: {}
+[39.190335] (-) TimerEvent: {}
+[39.192358] (vision_opencv) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[39.194961] (vision_opencv) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[39.290635] (-) TimerEvent: {}
+[39.391821] (-) TimerEvent: {}
+[39.418809] (opencv_tests) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/daniel/controlbot_ws/build/opencv_tests/build', '--no-deps', 'symlink_data'], 'cwd': '/home/daniel/controlbot_ws/build/opencv_tests', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'daniel', 'SSH_AGENT_PID': '2489', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/daniel/controlbot_ws/install/cv_bridge/lib:/home/daniel/controlbot_ws/install/image_geometry/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64', 'HOME': '/home/daniel', 'OLDPWD': '/home/daniel/controlbot_ws', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2393', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '7831', '_colcon_cd_root': '/opt/ros/galactic/', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/daniel/controlbot_ws/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'daniel', 'JOURNAL_STREAM': '8:57060', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'daniel', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524', 'INVOCATION_ID': 'b8e3036cb5844bb6b79e0d182f888d32', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '2', 'AMENT_PREFIX_PATH': '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/daniel/controlbot_ws/build/opencv_tests', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/daniel/controlbot_ws/build/opencv_tests/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry'}, 'shell': False}
+[39.447983] (controller) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/daniel/controlbot_ws/build/controller/build', '--no-deps', 'symlink_data'], 'cwd': '/home/daniel/controlbot_ws/build/controller', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'daniel', 'SSH_AGENT_PID': '2489', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/daniel/controlbot_ws/install/cv_bridge/lib:/home/daniel/controlbot_ws/install/image_geometry/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64', 'HOME': '/home/daniel', 'OLDPWD': '/home/daniel/controlbot_ws', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2393', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '7831', '_colcon_cd_root': '/opt/ros/galactic/', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/daniel/controlbot_ws/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'daniel', 'JOURNAL_STREAM': '8:57060', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'daniel', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524', 'INVOCATION_ID': 'b8e3036cb5844bb6b79e0d182f888d32', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '2', 'AMENT_PREFIX_PATH': '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/daniel/controlbot_ws/build/controller', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/daniel/controlbot_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry'}, 'shell': False}
+[39.468806] (vision_opencv) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[39.491901] (vision_opencv) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[39.492416] (-) TimerEvent: {}
+[39.493513] (vision_opencv) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[39.499610] (vision_opencv) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.6 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[39.565153] (vision_opencv) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[39.565943] (vision_opencv) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[39.592696] (-) TimerEvent: {}
+[39.693695] (-) TimerEvent: {}
+[39.728345] (vision_opencv) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[39.793940] (-) TimerEvent: {}
+[39.895313] (-) TimerEvent: {}
+[39.971331] (vision_opencv) StdoutLine: {'line': b'-- Configuring done\n'}
+[39.977731] (vision_opencv) StdoutLine: {'line': b'-- Generating done\n'}
+[39.981898] (vision_opencv) StdoutLine: {'line': b'-- Build files have been written to: /home/daniel/controlbot_ws/build/vision_opencv\n'}
+[39.995501] (-) TimerEvent: {}
+[40.005617] (vision_opencv) CommandEnded: {'returncode': 0}
+[40.287849] (-) TimerEvent: {}
+[40.288843] (vision_opencv) JobProgress: {'identifier': 'vision_opencv', 'progress': 'build'}
+[40.288965] (vision_opencv) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/daniel/controlbot_ws/build/vision_opencv', '--', '-j6', '-l6'], 'cwd': '/home/daniel/controlbot_ws/build/vision_opencv', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/vision_opencv'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[40.290119] (controller) StdoutLine: {'line': b'running develop\n'}
+[40.290461] (opencv_tests) StdoutLine: {'line': b'running develop\n'}
+[40.388249] (vision_opencv) CommandEnded: {'returncode': 0}
+[40.391622] (-) TimerEvent: {}
+[40.392866] (vision_opencv) JobProgress: {'identifier': 'vision_opencv', 'progress': 'install'}
+[40.392989] (vision_opencv) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/daniel/controlbot_ws/build/vision_opencv'], 'cwd': '/home/daniel/controlbot_ws/build/vision_opencv', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'daniel'), ('SSH_AGENT_PID', '2489'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/daniel/controlbot_ws/install/image_geometry/lib:/home/daniel/controlbot_ws/install/cv_bridge/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64'), ('HOME', '/home/daniel'), ('OLDPWD', '/home/daniel/controlbot_ws'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2393'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '7831'), ('_colcon_cd_root', '/opt/ros/galactic/'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/daniel/controlbot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'daniel'), ('JOURNAL_STREAM', '8:57060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'daniel'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/2524,unix/ubuntu:/tmp/.ICE-unix/2524'), ('INVOCATION_ID', 'b8e3036cb5844bb6b79e0d182f888d32'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '2'), ('AMENT_PREFIX_PATH', '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:9ce665df-e510-45c3-bade-63be79a27a3e'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/daniel/controlbot_ws/build/vision_opencv'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic')]), 'shell': False}
+[40.417071] (vision_opencv) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[40.417997] (vision_opencv) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[40.419017] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/ament_index/resource_index/package_run_dependencies/vision_opencv\n'}
+[40.425179] (opencv_tests) StdoutLine: {'line': b'running egg_info\n'}
+[40.425964] (opencv_tests) StdoutLine: {'line': b'creating opencv_tests.egg-info\n'}
+[40.426226] (opencv_tests) StdoutLine: {'line': b'writing opencv_tests.egg-info/PKG-INFO\n'}
+[40.426395] (opencv_tests) StdoutLine: {'line': b'writing dependency_links to opencv_tests.egg-info/dependency_links.txt\n'}
+[40.426549] (opencv_tests) StdoutLine: {'line': b'writing entry points to opencv_tests.egg-info/entry_points.txt\n'}
+[40.426730] (opencv_tests) StdoutLine: {'line': b'writing requirements to opencv_tests.egg-info/requires.txt\n'}
+[40.426876] (opencv_tests) StdoutLine: {'line': b'writing top-level names to opencv_tests.egg-info/top_level.txt\n'}
+[40.427638] (controller) StdoutLine: {'line': b'running egg_info\n'}
+[40.427946] (controller) StdoutLine: {'line': b'creating controller.egg-info\n'}
+[40.428481] (controller) StdoutLine: {'line': b'writing controller.egg-info/PKG-INFO\n'}
+[40.429396] (controller) StdoutLine: {'line': b'writing dependency_links to controller.egg-info/dependency_links.txt\n'}
+[40.429849] (controller) StdoutLine: {'line': b'writing entry points to controller.egg-info/entry_points.txt\n'}
+[40.430093] (controller) StdoutLine: {'line': b'writing requirements to controller.egg-info/requires.txt\n'}
+[40.430520] (controller) StdoutLine: {'line': b'writing top-level names to controller.egg-info/top_level.txt\n'}
+[40.430688] (opencv_tests) StdoutLine: {'line': b"writing manifest file 'opencv_tests.egg-info/SOURCES.txt'\n"}
+[40.434100] (controller) StdoutLine: {'line': b"writing manifest file 'controller.egg-info/SOURCES.txt'\n"}
+[40.448530] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/ament_index/resource_index/parent_prefix_path/vision_opencv\n'}
+[40.476332] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/environment/ament_prefix_path.sh\n'}
+[40.491784] (-) TimerEvent: {}
+[40.503178] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/environment/ament_prefix_path.dsv\n'}
+[40.503961] (controller) StdoutLine: {'line': b"reading manifest file 'controller.egg-info/SOURCES.txt'\n"}
+[40.504447] (opencv_tests) StdoutLine: {'line': b"reading manifest file 'opencv_tests.egg-info/SOURCES.txt'\n"}
+[40.505657] (controller) StdoutLine: {'line': b"writing manifest file 'controller.egg-info/SOURCES.txt'\n"}
+[40.506280] (opencv_tests) StdoutLine: {'line': b"writing manifest file 'opencv_tests.egg-info/SOURCES.txt'\n"}
+[40.532170] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/environment/path.sh\n'}
+[40.558817] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/environment/path.dsv\n'}
+[40.586923] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/local_setup.bash\n'}
+[40.591939] (-) TimerEvent: {}
+[40.595224] (opencv_tests) StdoutLine: {'line': b'running build_ext\n'}
+[40.596157] (opencv_tests) StdoutLine: {'line': b'Creating /home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages/site.py\n'}
+[40.596475] (controller) StdoutLine: {'line': b'running build_ext\n'}
+[40.597117] (controller) StdoutLine: {'line': b'Creating /home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages/site.py\n'}
+[40.601930] (opencv_tests) StdoutLine: {'line': b'Creating /home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages/opencv-tests.egg-link (link to .)\n'}
+[40.602338] (controller) StdoutLine: {'line': b'Creating /home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages/controller.egg-link (link to .)\n'}
+[40.604540] (opencv_tests) StdoutLine: {'line': b'Installing broadcast script to /home/daniel/controlbot_ws/install/opencv_tests/lib/opencv_tests\n'}
+[40.605149] (opencv_tests) StdoutLine: {'line': b'Installing rosfacedetect script to /home/daniel/controlbot_ws/install/opencv_tests/lib/opencv_tests\n'}
+[40.605583] (controller) StdoutLine: {'line': b'Installing depth_processing script to /home/daniel/controlbot_ws/install/controller/lib/controller\n'}
+[40.605891] (controller) StdoutLine: {'line': b'Installing hl_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller\n'}
+[40.606233] (controller) StdoutLine: {'line': b'Installing hw_interface script to /home/daniel/controlbot_ws/install/controller/lib/controller\n'}
+[40.606485] (opencv_tests) StdoutLine: {'line': b'Installing source script to /home/daniel/controlbot_ws/install/opencv_tests/lib/opencv_tests\n'}
+[40.606867] (controller) StdoutLine: {'line': b'Installing mtr_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller\n'}
+[40.607064] (controller) StdoutLine: {'line': b'\n'}
+[40.607329] (controller) StdoutLine: {'line': b'Installed /home/daniel/controlbot_ws/build/controller\n'}
+[40.607541] (controller) StdoutLine: {'line': b'running symlink_data\n'}
+[40.607699] (opencv_tests) StdoutLine: {'line': b'\n'}
+[40.607852] (opencv_tests) StdoutLine: {'line': b'Installed /home/daniel/controlbot_ws/build/opencv_tests\n'}
+[40.608001] (opencv_tests) StdoutLine: {'line': b'running symlink_data\n'}
+[40.608145] (controller) StdoutLine: {'line': b'creating /home/daniel/controlbot_ws/install/controller/share/ament_index\n'}
+[40.608287] (controller) StdoutLine: {'line': b'creating /home/daniel/controlbot_ws/install/controller/share/ament_index/resource_index\n'}
+[40.608424] (controller) StdoutLine: {'line': b'creating /home/daniel/controlbot_ws/install/controller/share/ament_index/resource_index/packages\n'}
+[40.608559] (opencv_tests) StdoutLine: {'line': b'creating /home/daniel/controlbot_ws/install/opencv_tests/share/ament_index\n'}
+[40.608743] (opencv_tests) StdoutLine: {'line': b'creating /home/daniel/controlbot_ws/install/opencv_tests/share/ament_index/resource_index\n'}
+[40.608885] (controller) StdoutLine: {'line': b'symbolically linking /home/daniel/controlbot_ws/build/controller/resource/controller -> /home/daniel/controlbot_ws/install/controller/share/ament_index/resource_index/packages\n'}
+[40.609057] (opencv_tests) StdoutLine: {'line': b'creating /home/daniel/controlbot_ws/install/opencv_tests/share/ament_index/resource_index/packages\n'}
+[40.609196] (controller) StdoutLine: {'line': b'symbolically linking /home/daniel/controlbot_ws/build/controller/package.xml -> /home/daniel/controlbot_ws/install/controller/share/controller\n'}
+[40.609335] (opencv_tests) StdoutLine: {'line': b'symbolically linking /home/daniel/controlbot_ws/build/opencv_tests/resource/opencv_tests -> /home/daniel/controlbot_ws/install/opencv_tests/share/ament_index/resource_index/packages\n'}
+[40.609477] (opencv_tests) StdoutLine: {'line': b'symbolically linking /home/daniel/controlbot_ws/build/opencv_tests/package.xml -> /home/daniel/controlbot_ws/install/opencv_tests/share/opencv_tests\n'}
+[40.615997] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/local_setup.sh\n'}
+[40.647401] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/local_setup.zsh\n'}
+[40.677136] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/local_setup.dsv\n'}
+[40.692231] (-) TimerEvent: {}
+[40.708244] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/package.dsv\n'}
+[40.739297] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/ament_index/resource_index/packages/vision_opencv\n'}
+[40.749400] (controller) CommandEnded: {'returncode': 0}
+[40.768554] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/cmake/vision_opencvConfig.cmake\n'}
+[40.780065] (controller) JobEnded: {'identifier': 'controller', 'rc': 0}
+[40.784453] (opencv_tests) CommandEnded: {'returncode': 0}
+[40.792415] (-) TimerEvent: {}
+[40.796160] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/cmake/vision_opencvConfig-version.cmake\n'}
+[40.807709] (opencv_tests) JobEnded: {'identifier': 'opencv_tests', 'rc': 0}
+[40.824893] (vision_opencv) StdoutLine: {'line': b'-- Symlinking: /home/daniel/controlbot_ws/install/vision_opencv/share/vision_opencv/package.xml\n'}
+[40.858009] (vision_opencv) CommandEnded: {'returncode': 0}
+[40.893146] (-) TimerEvent: {}
+[40.900499] (vision_opencv) JobEnded: {'identifier': 'vision_opencv', 'rc': 0}
+[40.903025] (-) EventReactorShutdown: {}

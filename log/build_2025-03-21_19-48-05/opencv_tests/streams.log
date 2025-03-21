@@ -1,0 +1,19 @@
+[2.793s] Invoking command in '/home/daniel/controlbot_ws/build/opencv_tests': CMAKE_PREFIX_PATH=/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry LD_LIBRARY_PATH=/home/daniel/controlbot_ws/install/cv_bridge/lib:/home/daniel/controlbot_ws/install/image_geometry/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/daniel/controlbot_ws/build/opencv_tests/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/build/opencv_tests:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/build/controller:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/daniel/controlbot_ws/build/opencv_tests/build --no-deps symlink_data
+[3.431s] running develop
+[3.797s] running egg_info
+[3.798s] writing opencv_tests.egg-info/PKG-INFO
+[3.798s] writing dependency_links to opencv_tests.egg-info/dependency_links.txt
+[3.799s] writing entry points to opencv_tests.egg-info/entry_points.txt
+[3.799s] writing requirements to opencv_tests.egg-info/requires.txt
+[3.800s] writing top-level names to opencv_tests.egg-info/top_level.txt
+[3.877s] reading manifest file 'opencv_tests.egg-info/SOURCES.txt'
+[3.878s] writing manifest file 'opencv_tests.egg-info/SOURCES.txt'
+[3.960s] running build_ext
+[3.961s] Creating /home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages/opencv-tests.egg-link (link to .)
+[3.964s] Installing broadcast script to /home/daniel/controlbot_ws/install/opencv_tests/lib/opencv_tests
+[3.966s] Installing rosfacedetect script to /home/daniel/controlbot_ws/install/opencv_tests/lib/opencv_tests
+[3.968s] Installing source script to /home/daniel/controlbot_ws/install/opencv_tests/lib/opencv_tests
+[3.968s] 
+[3.969s] Installed /home/daniel/controlbot_ws/build/opencv_tests
+[3.969s] running symlink_data
+[4.154s] Invoked command in '/home/daniel/controlbot_ws/build/opencv_tests' returned '0': CMAKE_PREFIX_PATH=/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry LD_LIBRARY_PATH=/home/daniel/controlbot_ws/install/cv_bridge/lib:/home/daniel/controlbot_ws/install/image_geometry/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/daniel/controlbot_ws/build/opencv_tests/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/build/opencv_tests:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/build/controller:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/daniel/controlbot_ws/build/opencv_tests/build --no-deps symlink_data

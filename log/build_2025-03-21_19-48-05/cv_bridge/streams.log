@@ -1,0 +1,56 @@
+[0.068s] Invoking command in '/home/daniel/controlbot_ws/build/cv_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic /usr/bin/cmake --build /home/daniel/controlbot_ws/build/cv_bridge -- -j6 -l6
+[0.284s] [ 12%] Built target gtest_main
+[0.292s] [ 31%] Built target cv_bridge
+[0.299s] [ 43%] Built target gtest
+[0.311s] [ 43%] Built target ament_cmake_python_symlink_cv_bridge
+[0.377s] [ 62%] Built target cv_bridge_boost
+[0.394s] [100%] Built target cv_bridge-utest
+[0.959s] running egg_info
+[0.961s] writing cv_bridge.egg-info/PKG-INFO
+[0.962s] writing dependency_links to cv_bridge.egg-info/dependency_links.txt
+[0.963s] writing top-level names to cv_bridge.egg-info/top_level.txt
+[1.047s] reading manifest file 'cv_bridge.egg-info/SOURCES.txt'
+[1.048s] writing manifest file 'cv_bridge.egg-info/SOURCES.txt'
+[1.177s] [100%] Built target ament_cmake_python_build_cv_bridge_egg
+[1.247s] Invoked command in '/home/daniel/controlbot_ws/build/cv_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic /usr/bin/cmake --build /home/daniel/controlbot_ws/build/cv_bridge -- -j6 -l6
+[1.254s] Invoking command in '/home/daniel/controlbot_ws/build/cv_bridge': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic /usr/bin/cmake --install /home/daniel/controlbot_ws/build/cv_bridge
+[1.282s] -- Install configuration: ""
+[1.283s] -- Execute custom install script
+[1.283s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/pythonpath.sh
+[1.284s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/pythonpath.dsv
+[1.285s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages//cv_bridge.egg-info/PKG-INFO
+[1.286s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages//cv_bridge.egg-info/SOURCES.txt
+[1.286s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages//cv_bridge.egg-info/dependency_links.txt
+[1.286s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages//cv_bridge.egg-info/top_level.txt
+[1.288s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/__init__.py
+[1.289s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/core.py
+[1.290s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/libcv_bridge.so
+[1.290s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/include/cv_bridge/cv_bridge_export.h
+[1.291s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/boost//cv_bridge_boost.so
+[1.292s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/library_path.sh
+[1.293s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/library_path.dsv
+[1.294s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/include/cv_bridge/cv_bridge.h
+[1.294s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/include/cv_bridge/rgb_colors.h
+[1.295s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/lib/libcv_bridge.so
+[1.296s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/ament_index/resource_index/package_run_dependencies/cv_bridge
+[1.296s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/ament_index/resource_index/parent_prefix_path/cv_bridge
+[1.297s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/ament_prefix_path.sh
+[1.297s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/ament_prefix_path.dsv
+[1.298s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/path.sh
+[1.299s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/environment/path.dsv
+[1.299s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/local_setup.bash
+[1.300s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/local_setup.sh
+[1.300s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/local_setup.zsh
+[1.301s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/local_setup.dsv
+[1.301s] -- Symlinking: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/package.dsv
+[1.331s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/ament_index/resource_index/packages/cv_bridge
+[1.332s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridge-extras.cmake
+[1.332s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.333s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.333s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/ament_cmake_export_libraries-extras.cmake
+[1.334s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridgeConfig.cmake
+[1.334s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/cmake/cv_bridgeConfig-version.cmake
+[1.334s] -- Up-to-date symlink: /home/daniel/controlbot_ws/install/cv_bridge/share/cv_bridge/package.xml
+[1.434s] Listing '/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge'...
+[1.435s] Listing '/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages/cv_bridge/boost'...
+[1.614s] Invoked command in '/home/daniel/controlbot_ws/build/cv_bridge' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/controller:/opt/ros/galactic /usr/bin/cmake --install /home/daniel/controlbot_ws/build/cv_bridge

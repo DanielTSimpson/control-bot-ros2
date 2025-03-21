@@ -1,0 +1,28 @@
+[2.739s] Invoking command in '/home/daniel/controlbot_ws/build/controller': CMAKE_PREFIX_PATH=/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry LD_LIBRARY_PATH=/home/daniel/controlbot_ws/install/cv_bridge/lib:/home/daniel/controlbot_ws/install/image_geometry/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/daniel/controlbot_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/daniel/controlbot_ws/build/controller/build --no-deps symlink_data
+[3.572s] running develop
+[3.710s] running egg_info
+[3.710s] creating controller.egg-info
+[3.711s] writing controller.egg-info/PKG-INFO
+[3.712s] writing dependency_links to controller.egg-info/dependency_links.txt
+[3.712s] writing entry points to controller.egg-info/entry_points.txt
+[3.712s] writing requirements to controller.egg-info/requires.txt
+[3.713s] writing top-level names to controller.egg-info/top_level.txt
+[3.716s] writing manifest file 'controller.egg-info/SOURCES.txt'
+[3.786s] reading manifest file 'controller.egg-info/SOURCES.txt'
+[3.788s] writing manifest file 'controller.egg-info/SOURCES.txt'
+[3.879s] running build_ext
+[3.879s] Creating /home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages/site.py
+[3.885s] Creating /home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages/controller.egg-link (link to .)
+[3.888s] Installing depth_processing script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[3.888s] Installing hl_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[3.888s] Installing hw_interface script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[3.889s] Installing mtr_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller
+[3.889s] 
+[3.890s] Installed /home/daniel/controlbot_ws/build/controller
+[3.890s] running symlink_data
+[3.890s] creating /home/daniel/controlbot_ws/install/controller/share/ament_index
+[3.890s] creating /home/daniel/controlbot_ws/install/controller/share/ament_index/resource_index
+[3.891s] creating /home/daniel/controlbot_ws/install/controller/share/ament_index/resource_index/packages
+[3.891s] symbolically linking /home/daniel/controlbot_ws/build/controller/resource/controller -> /home/daniel/controlbot_ws/install/controller/share/ament_index/resource_index/packages
+[3.891s] symbolically linking /home/daniel/controlbot_ws/build/controller/package.xml -> /home/daniel/controlbot_ws/install/controller/share/controller
+[4.034s] Invoked command in '/home/daniel/controlbot_ws/build/controller' returned '0': CMAKE_PREFIX_PATH=/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry LD_LIBRARY_PATH=/home/daniel/controlbot_ws/install/cv_bridge/lib:/home/daniel/controlbot_ws/install/image_geometry/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64 PYTHONPATH=/home/daniel/controlbot_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/daniel/controlbot_ws/build/controller/build --no-deps symlink_data
