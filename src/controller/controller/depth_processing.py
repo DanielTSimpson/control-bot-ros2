@@ -7,54 +7,54 @@ import cv2
 import numpy as np
 
 
-def show_image(data, window_name="Filtered Image", max_width=800, max_height=600):
-    # Normalize the data for visualization (0-255 for colormap application)
+def show_image(data, window_name="Filtered Image", max_width=1600, max_height=1200):
+    # Normalize the data for visualization (if necessary)
     normalized_data = cv2.normalize(data, None, 0, 255, cv2.NORM_MINMAX)
-    normalized_data = np.uint8(normalized_data)
-
-    # Apply a colormap (e.g., COLORMAP_JET for a rainbow effect)
-    colored_image = cv2.applyColorMap(normalized_data, cv2.COLORMAP_JET)
+    normalized_data = np.uint8(normalized_data)  # Convert to 8-bit image
+    normalized_data = cv2.applyColorMap(normalized_data, cv2.COLORMAP_JET)
 
     # Get original dimensions
-    height, width = colored_image.shape[:2]
+    height, width = normalized_data.shape[:2]
 
     # Calculate scaling factor to fit within max dimensions while preserving aspect ratio
     scale = min(max_width / width, max_height / height)
 
     # Resize the image to fit the window
-    new_width, new_height = int(width * scale), int(height * scale)
-    resized_image = cv2.resize(colored_image, (new_width, new_height), interpolation=cv2.INTER_AREA)
+    new_width, new_height = int(width * scale), int(height * scale * 1.5)
+    resized_image = cv2.resize(normalized_data, (new_width, new_height))
 
     # Create resizable window and display the image
-    cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
+    cv2.namedWindow(window_name, cv2.WINDOW_AUTOSIZE)
+    
     cv2.resizeWindow(window_name, new_width, new_height)
     cv2.imshow(window_name, resized_image)
 
     # Wait for a key press and then close the window
-    cv2.waitKey(1000)
+    cv2.waitKey(500)
     cv2.destroyAllWindows()
 
 
 def filter(data, node):
-    K_s = 8  # Side length of filter (must be divisible by 480, 640)
+    K_rows = 480  #Filter window height. Must be factor of 480
+    K_cols = 1  #Filter window width. Must be factor of 640
     data_rows = np.size(data, 0)  # Number of Rows
     data_columns = np.size(data, 1)  # Number of Columns
 
     # Filter Matrix (for averaging)
-    K = np.ones((K_s, K_s)) / (K_s * K_s)
+    K = np.ones((K_rows, K_cols)) / (K_rows * K_cols)
 
     # Correctly initialize the resultant matrix with zeros
-    R = np.zeros((data_rows // K_s, data_columns // K_s))
+    R = np.zeros((data_rows // K_rows, data_columns // K_cols))
 
-    for i in range(0, data_rows, K_s):
-        for j in range(0, data_columns, K_s):
-            sub_arr = data[i:(i + K_s), j:(j + K_s)]
+    for i in range(0, data_rows, K_rows):
+        for j in range(0, data_columns, K_cols):
+            sub_arr = data[i:(i + K_rows), j:(j + K_cols)]
 
             # Perform element-wise multiplication and sum the result for averaging
-            R[i // K_s, j // K_s] = np.sum(sub_arr * K)
+            R[i // K_rows, j // K_cols] = np.sum(sub_arr * K)
 
     show_image(R)
-    return Float32(data=R[1,1])
+    return Float32(data=R[0,1])
 
 
 
