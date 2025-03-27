@@ -44,18 +44,11 @@ def show_image(data, window_name="Filtered Image", max_width=1600, max_height=12
 
 
 def main(args = None):
-    K_rows = 24  #Filter window height. Must be factor of data_rows
-    K_cols = 64  #Filter window width. Must be factor of data_cols
-    # Filter Matrix (for averaging)
-    K = np.ones((K_rows, K_cols)) / (K_rows * K_cols)
+    a = np.random.randint(0, 100, (720, 1280, 3))
+    print(np.shape(a))
+    print(np.shape(a[0]))
+    print(np.shape(a[:,0]))
+    print(np.shape(a[:,:,0]))
 
-    K[0,:] = K[0,:]*0
-    K[:,0] = K[:,0]*0
-    K[K_rows-1,:] = K[K_rows-1,:]*0
-    K[:,K_cols-1] = K[:,K_cols-1]*0
-    
-    show_image(K)
-    K = crop(K, 0, 0, 0, 1)
-    show_image(K)
 
 main()

@@ -37,12 +37,13 @@ def crop(data, top = 0, right = 0, bottom = 0, left = 0):
 
 
 
-def show_image(data, window_name="Filtered Image", wait_time = 0, max_width=1600, max_height=1200):
+def show_image(data, window_name="Filtered Image", wait_time = 0, max_width=1600, max_height=1200, colorize = True):
 
     # Normalize the data for visualization (if necessary)
-    normalized_data = cv2.normalize(data, None, 0, 255, cv2.NORM_MINMAX)
-    normalized_data = np.uint8(normalized_data)  # Convert to 8-bit image
-    normalized_data = cv2.applyColorMap(normalized_data, cv2.COLORMAP_JET)
+    normalized_data = np.uint8(data)  # Convert to 8-bit image
+    if colorize:
+        normalized_data = cv2.normalize(normalized_data, None, 0, 255, cv2.NORM_MINMAX)
+        normalized_data = cv2.applyColorMap(normalized_data, cv2.COLORMAP_JET)
 
     # Get original dimensions
     height, width = normalized_data.shape[:2]
@@ -56,6 +57,7 @@ def show_image(data, window_name="Filtered Image", wait_time = 0, max_width=1600
 
     # Create resizable window and display the image
     cv2.namedWindow(window_name, cv2.WINDOW_AUTOSIZE)
+    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_RGB2BGR) # Convert RGB to BGR
     
     cv2.resizeWindow(window_name, new_width, new_height)
     cv2.imshow(window_name, resized_image)
@@ -69,29 +71,29 @@ def show_image(data, window_name="Filtered Image", wait_time = 0, max_width=1600
 def filter_img(data, node):   
     data_rows = np.size(data, 0)  # Number of Rows
     data_cols = np.size(data, 1)  # Number of Columns
-    K_rows = data_rows // 36  #Filter window height. Must be factor of data_rows
-    K_cols = data_cols // 36  #Filter window width. Must be factor of data_cols
+    K_rows = data_rows // data_rows * 2  #Filter window height. Must be factor of data_rows
+    K_cols = data_cols // data_cols * 2  #Filter window width. Must be factor of data_cols
     
     # Filter Matrix (for averaging)
     K = np.ones((K_rows, K_cols)) / (K_rows * K_cols)
 
     # Initialize the resultant matrix with zeros
-    R = np.zeros((3, data_rows // K_rows, data_cols // K_cols))
+    R = np.zeros((data_rows // K_rows, data_cols // K_cols, 3))
 
     for i in range(0, 3):
         for j in range(0, data_rows, K_rows):
             for k in range(0, data_cols, K_cols):
-                sub_arr = data[j:(j + K_rows), k:(k + K_cols)][i]
-   
-                #node.get_logger().info(str(np.shape(R[i][j // K_rows, k // K_cols])))
-                #node.get_logger().info(str(np.shape(np.sum(sub_arr * K))))
+                sub_arr = data[j:(j + K_rows), k:(k + K_cols), i]
 
                 # Perform element-wise multiplication and sum the result for averaging
-                R[i][j // K_rows, k // K_cols] = np.sum(sub_arr[:,:][i] * K)  #<<< BUG HERE WITH PARSING SUBARRAYS
+                R[j // K_rows, k // K_cols, i] = np.sum(sub_arr * K)
     
     
-    cv2.imshow("Picture", R)
-
+   # cv2.imshow("Picture", R)
+    show_image(R, colorize = False)
+    #cv2.imshow('Image', bgr_array)
+    #cv2.waitKey(0)
+    #cv2.destroyAllWindows()
 
 
 def filter_depth(data, node):    
@@ -116,7 +118,6 @@ def filter_depth(data, node):
     #Plot data array
     plot_data(R[0])
     
-    #show_image(R, "Image", 100)
     loss = int(np.argmin(R)) - data_cols // 2 // K_cols
     
     return Int32(data = loss)
@@ -159,8 +160,8 @@ class DepthProcessor(Node):
     def callback2(self, msg):
         bridge = CvBridge()
         color_img = bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
-        data = np.asarray(color_img, dtype="int32")
-        filter_img(data, self)
+        data = np.asarray(color_img, dtype="uint8")
+        #filter_img(data, self)
 
     def timer_callback(self):
         if self.loss:
