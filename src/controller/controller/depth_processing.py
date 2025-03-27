@@ -5,6 +5,24 @@ from std_msgs.msg import Int32
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
+import time
+plt.ion() # Enable Interactive Mode
+
+
+
+def plot_data(data):
+    """
+    Plot the data (a 1D array) using matplotlib
+    """
+    plt.clf()  # Clear previous plot
+    
+    plt.plot(data, linewidth = 7)
+    plt.ylim(-1000, 5000)
+    plt.ylabel("Averaged Vertical Depth Value")
+    plt.xlabel("Horizontal Pixels")
+    
+    plt.pause(0.1)  # Pause to allow for rendering
 
 
 
@@ -20,6 +38,7 @@ def crop(data, top = 0, right = 0, bottom = 0, left = 0):
 
 
 def show_image(data, window_name="Filtered Image", wait_time = 0, max_width=1600, max_height=1200):
+
     # Normalize the data for visualization (if necessary)
     normalized_data = cv2.normalize(data, None, 0, 255, cv2.NORM_MINMAX)
     normalized_data = np.uint8(normalized_data)  # Convert to 8-bit image
@@ -47,11 +66,39 @@ def show_image(data, window_name="Filtered Image", wait_time = 0, max_width=1600
 
 
 
-def filter(data, node):    
+def filter_img(data, node):   
+    data_rows = np.size(data, 0)  # Number of Rows
+    data_cols = np.size(data, 1)  # Number of Columns
+    K_rows = data_rows // 36  #Filter window height. Must be factor of data_rows
+    K_cols = data_cols // 36  #Filter window width. Must be factor of data_cols
+    
+    # Filter Matrix (for averaging)
+    K = np.ones((K_rows, K_cols)) / (K_rows * K_cols)
+
+    # Initialize the resultant matrix with zeros
+    R = np.zeros((3, data_rows // K_rows, data_cols // K_cols))
+
+    for i in range(0, 3):
+        for j in range(0, data_rows, K_rows):
+            for k in range(0, data_cols, K_cols):
+                sub_arr = data[j:(j + K_rows), k:(k + K_cols)][i]
+   
+                #node.get_logger().info(str(np.shape(R[i][j // K_rows, k // K_cols])))
+                #node.get_logger().info(str(np.shape(np.sum(sub_arr * K))))
+
+                # Perform element-wise multiplication and sum the result for averaging
+                R[i][j // K_rows, k // K_cols] = np.sum(sub_arr[:,:][i] * K)  #<<< BUG HERE WITH PARSING SUBARRAYS
+    
+    
+    cv2.imshow("Picture", R)
+
+
+
+def filter_depth(data, node):    
     data_rows = np.size(data, 0)  # Number of Rows
     data_cols = np.size(data, 1)  # Number of Columns
     K_rows = data_rows // 1  #Filter window height. Must be factor of data_rows
-    K_cols = data_cols // data_cols  #Filter window width. Must be factor of data_cols
+    K_cols = data_cols // data_cols * 8  #Filter window width. Must be factor of data_cols
     
     # Filter Matrix (for averaging)
     K = np.ones((K_rows, K_cols)) / (K_rows * K_cols)
@@ -65,9 +112,13 @@ def filter(data, node):
 
             # Perform element-wise multiplication and sum the result for averaging
             R[i // K_rows, j // K_cols] = np.sum(sub_arr * K)
-
-    show_image(R, "Image", 500)
-    loss = int(np.argmax(R)) - data_cols // 2
+    
+    #Plot data array
+    plot_data(R[0])
+    
+    #show_image(R, "Image", 100)
+    loss = int(np.argmin(R)) - data_cols // 2 // K_cols
+    
     return Int32(data = loss)
 
 
@@ -79,11 +130,18 @@ class DepthProcessor(Node):
         self.loss = Int32()
         self.loss.data = 0
 
-        self.subscription = self.create_subscription(
+        self.sub1 = self.create_subscription(
             Image,
             'realsense2_camera/depth/image_rect_raw',
-            self.listener_callback,
+            self.callback1,
             10)
+        
+        self.sub2 = self.create_subscription(
+            Image,
+            'realsense2_camera/color/image_raw',
+            self.callback2,
+            10)
+
         self.publisher = self.create_publisher(Int32, 'loss_function', 10)
 
         timer_period = 0.05
@@ -91,14 +149,18 @@ class DepthProcessor(Node):
 
 
 
-    def listener_callback(self, msg):
+    def callback1(self, msg):
         bridge = CvBridge()
         depth_image = bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
         data = np.asarray(depth_image, dtype="int32")
-        data = crop(data, 0, 0, 180, 24)
-        self.loss = filter(data, self)
+        data = crop(data, 0, 0, 480//2, 24)
+        self.loss = filter_depth(data, self)
 
-
+    def callback2(self, msg):
+        bridge = CvBridge()
+        color_img = bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
+        data = np.asarray(color_img, dtype="int32")
+        filter_img(data, self)
 
     def timer_callback(self):
         if self.loss:

@@ -1,0 +1,94 @@
+[0.000000] (-) TimerEvent: {}
+[0.000907] (-) JobUnselected: {'identifier': 'cv_bridge'}
+[0.001184] (-) JobUnselected: {'identifier': 'image_geometry'}
+[0.001739] (-) JobUnselected: {'identifier': 'opencv_tests'}
+[0.002131] (-) JobUnselected: {'identifier': 'vision_opencv'}
+[0.002420] (controller) JobQueued: {'identifier': 'controller', 'dependencies': OrderedDict([('cv_bridge', '/home/daniel/controlbot_ws/install/cv_bridge')])}
+[0.002562] (controller) JobStarted: {'identifier': 'controller'}
+[0.099112] (-) TimerEvent: {}
+[0.200149] (-) TimerEvent: {}
+[0.301130] (-) TimerEvent: {}
+[0.401922] (-) TimerEvent: {}
+[0.502736] (-) TimerEvent: {}
+[0.603521] (-) TimerEvent: {}
+[0.704348] (-) TimerEvent: {}
+[0.805096] (-) TimerEvent: {}
+[0.905827] (-) TimerEvent: {}
+[1.006602] (-) TimerEvent: {}
+[1.107456] (-) TimerEvent: {}
+[1.209119] (-) TimerEvent: {}
+[1.309852] (-) TimerEvent: {}
+[1.410677] (-) TimerEvent: {}
+[1.511382] (-) TimerEvent: {}
+[1.684887] (-) TimerEvent: {}
+[1.785619] (-) TimerEvent: {}
+[1.886367] (-) TimerEvent: {}
+[1.987137] (-) TimerEvent: {}
+[2.087858] (-) TimerEvent: {}
+[2.188846] (-) TimerEvent: {}
+[2.289699] (-) TimerEvent: {}
+[2.390576] (-) TimerEvent: {}
+[2.491429] (-) TimerEvent: {}
+[2.592208] (-) TimerEvent: {}
+[2.692917] (-) TimerEvent: {}
+[2.793748] (-) TimerEvent: {}
+[2.894585] (-) TimerEvent: {}
+[2.995410] (-) TimerEvent: {}
+[3.096305] (-) TimerEvent: {}
+[3.197176] (-) TimerEvent: {}
+[3.298112] (-) TimerEvent: {}
+[3.398925] (-) TimerEvent: {}
+[3.499665] (-) TimerEvent: {}
+[3.600358] (-) TimerEvent: {}
+[3.700995] (-) TimerEvent: {}
+[3.801882] (-) TimerEvent: {}
+[3.902668] (-) TimerEvent: {}
+[4.003344] (-) TimerEvent: {}
+[4.104260] (-) TimerEvent: {}
+[4.205055] (-) TimerEvent: {}
+[4.263404] (controller) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/daniel/controlbot_ws/build/controller/build', '--no-deps', 'symlink_data'], 'cwd': '/home/daniel/controlbot_ws/build/controller', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'daniel', 'SSH_AGENT_PID': '3828', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/daniel/controlbot_ws/install/cv_bridge/lib:/home/daniel/controlbot_ws/install/image_geometry/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/aarch64-linux-gnu:/opt/ros/galactic/lib:/usr/local/cuda-11.4/lib64', 'HOME': '/home/daniel', 'OLDPWD': '/home/daniel/controlbot_ws/src/controller/controller', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '3733', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '4265', '_colcon_cd_root': '/opt/ros/galactic/', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/daniel/controlbot_ws/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'daniel', 'JOURNAL_STREAM': '8:66841', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'daniel', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/galactic/bin:/usr/local/cuda-11.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/3863,unix/ubuntu:/tmp/.ICE-unix/3863', 'INVOCATION_ID': 'c8138e9b46204f4e9000397d77f73535', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '2', 'AMENT_PREFIX_PATH': '/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/opencv_tests:/home/daniel/controlbot_ws/install/image_geometry:/home/daniel/controlbot_ws/install/controller:/home/daniel/controlbot_ws/install/cv_bridge:/opt/ros/galactic', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:abacef25-2efc-41d4-9581-a6872c87d203', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/daniel/controlbot_ws/build/controller', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/daniel/controlbot_ws/build/controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/cv_bridge/lib/python3.8/site-packages:/home/daniel/controlbot_ws/build/opencv_tests:/home/daniel/controlbot_ws/install/opencv_tests/lib/python3.8/site-packages:/home/daniel/controlbot_ws/install/image_geometry/lib/python3.8/site-packages:/home/daniel/controlbot_ws/build/controller:/home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/daniel/controlbot_ws/install/cv_bridge:/home/daniel/controlbot_ws/install/vision_opencv:/home/daniel/controlbot_ws/install/image_geometry'}, 'shell': False}
+[4.305384] (-) TimerEvent: {}
+[4.406415] (-) TimerEvent: {}
+[4.507300] (-) TimerEvent: {}
+[4.608154] (-) TimerEvent: {}
+[4.708989] (-) TimerEvent: {}
+[4.809809] (-) TimerEvent: {}
+[4.910637] (-) TimerEvent: {}
+[4.996989] (controller) StdoutLine: {'line': b'running develop\n'}
+[5.010723] (-) TimerEvent: {}
+[5.111297] (-) TimerEvent: {}
+[5.211914] (-) TimerEvent: {}
+[5.312574] (-) TimerEvent: {}
+[5.413365] (-) TimerEvent: {}
+[5.488913] (controller) StdoutLine: {'line': b'running egg_info\n'}
+[5.489635] (controller) StdoutLine: {'line': b'writing controller.egg-info/PKG-INFO\n'}
+[5.490341] (controller) StdoutLine: {'line': b'writing dependency_links to controller.egg-info/dependency_links.txt\n'}
+[5.490992] (controller) StdoutLine: {'line': b'writing entry points to controller.egg-info/entry_points.txt\n'}
+[5.491387] (controller) StdoutLine: {'line': b'writing requirements to controller.egg-info/requires.txt\n'}
+[5.491648] (controller) StdoutLine: {'line': b'writing top-level names to controller.egg-info/top_level.txt\n'}
+[5.513419] (-) TimerEvent: {}
+[5.613891] (-) TimerEvent: {}
+[5.705671] (controller) StdoutLine: {'line': b"reading manifest file 'controller.egg-info/SOURCES.txt'\n"}
+[5.714008] (-) TimerEvent: {}
+[5.814609] (-) TimerEvent: {}
+[5.845510] (controller) StdoutLine: {'line': b"writing manifest file 'controller.egg-info/SOURCES.txt'\n"}
+[5.914761] (-) TimerEvent: {}
+[5.927859] (controller) StdoutLine: {'line': b'running build_ext\n'}
+[6.014917] (-) TimerEvent: {}
+[6.115616] (-) TimerEvent: {}
+[6.216267] (-) TimerEvent: {}
+[6.313973] (controller) StdoutLine: {'line': b'Creating /home/daniel/controlbot_ws/install/controller/lib/python3.8/site-packages/controller.egg-link (link to .)\n'}
+[6.316365] (-) TimerEvent: {}
+[6.317099] (controller) StdoutLine: {'line': b'Installing depth_processing script to /home/daniel/controlbot_ws/install/controller/lib/controller\n'}
+[6.317701] (controller) StdoutLine: {'line': b'Installing hl_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller\n'}
+[6.318097] (controller) StdoutLine: {'line': b'Installing hw_interface script to /home/daniel/controlbot_ws/install/controller/lib/controller\n'}
+[6.318420] (controller) StdoutLine: {'line': b'Installing mtr_ctrl script to /home/daniel/controlbot_ws/install/controller/lib/controller\n'}
+[6.319019] (controller) StdoutLine: {'line': b'\n'}
+[6.319266] (controller) StdoutLine: {'line': b'Installed /home/daniel/controlbot_ws/build/controller\n'}
+[6.319426] (controller) StdoutLine: {'line': b'running symlink_data\n'}
+[6.416632] (-) TimerEvent: {}
+[6.501133] (controller) CommandEnded: {'returncode': 0}
+[6.516728] (-) TimerEvent: {}
+[6.713688] (controller) JobEnded: {'identifier': 'controller', 'rc': 0}
+[6.715648] (-) TimerEvent: {}
+[6.715852] (-) EventReactorShutdown: {}
