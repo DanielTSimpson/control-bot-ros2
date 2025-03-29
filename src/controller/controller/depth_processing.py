@@ -18,6 +18,8 @@ def plot_data(data):
     plt.clf()  # Clear previous plot
     
     plt.plot(data, linewidth = 7)
+    plt.plot(np.argmin(data), np.min(data), color='green', marker='o', linestyle='dashed',
+             linewidth=2, markersize=12) 
     plt.ylim(-1000, 5000)
     plt.ylabel("Averaged Vertical Depth Value")
     plt.xlabel("Horizontal Pixels")
@@ -37,7 +39,7 @@ def crop(data, top = 0, right = 0, bottom = 0, left = 0):
 
 
 
-def show_img(data, node, loss = 0, window_name="Filtered Image", wait_time = 0, max_width=1600, max_height=1200, colorize = True):
+def show_img(data, node, loss = 0, window_name="Filtered Image", wait_time = 0, max_width=1200, max_height=1800, colorize = True):
 
     # Normalize the data for visualization (if necessary)
     normalized_data = np.uint8(data)  # Convert to 8-bit image
@@ -92,7 +94,7 @@ def filter_img(data, node):
                 # Perform element-wise multiplication and sum the result for averaging
                 R[j // K_rows, k // K_cols, i] = np.sum(sub_arr * K)
     
-    return R
+    return R, K_cols
     
 
 
@@ -116,9 +118,9 @@ def filter_depth(data, node):
             R[i // K_rows, j // K_cols] = np.sum(sub_arr * K)
    
     loss = int(np.argmin(R) - np.size(R, 1) / 2) * K_cols
-    node.get_logger().info("Plot Loss: " + str(int(np.argmin(R)) - (np.size(R, 1)) / 2) +
-            "\tTrue Loss: " + str(loss)
-            )
+    #node.get_logger().info("Plot Loss: " + str(int(np.argmin(R)) - (np.size(R, 1)) / 2) +
+    #        "\tTrue Loss: " + str(loss)
+    #        )
     
     #Plot data array
     plot_data(R[0])
@@ -159,15 +161,15 @@ class DepthProcessor(Node):
         data = np.asarray(depth_image, dtype="int32")
         data = crop(data, 0, 0, 480//2, 24)
         self.loss = filter_depth(data, self)
-        self.get_logger().info("Got loss: " + str(self.loss))
 
     def callback2(self, msg):
         bridge = CvBridge()
         color_img = bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
         data = np.asarray(color_img, dtype="uint8")
-        color_img = filter_img(data, self)
+        color_img, filter_scale = filter_img(data, self)
+        self.get_logger().info("Filter Scale is: " + str(filter_scale))
         if self.loss:
-            show_img(color_img, self, loss = self.loss.data, colorize = False)
+            show_img(color_img, self, wait_time = 0, loss = self.loss.data // filter_scale, colorize = False)
 
     def timer_callback(self):
         if self.loss:
