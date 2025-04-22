@@ -15,12 +15,11 @@ class Display(object):
         self.wait_time = wait_time
         self.loss = loss
         self.max_width = 1200
-        self.max_height = 1800
+        self.max_height = 800
         self.window_name = "Display"
 
-    def show(self, data):
-        print(np.shape(data))
-
+    def show(self, data, window_name = None):
+        self.window_name = window_name if window_name else self.window_name
         if len(np.shape(data)) == 1:
             self._show_plot(data)
         elif len(np.shape(data)) == 2 or len(np.shape(data)) == 3:
@@ -38,7 +37,7 @@ class Display(object):
         plt.ylabel("Vertical depth values")
         plt.xlabel("Horizontal Pixels")
 
-        plt.pause(self.wait_time/1000)
+        plt.pause(0.1)
 
 
     def _show_img(self, data):
@@ -46,15 +45,14 @@ class Display(object):
         normed_data = np.uint8(normed_data)
         if len(np.shape(data)) == 2: normed_data = cv2.applyColorMap(normed_data, cv2.COLORMAP_JET)
         elif len(np.shape(data)) == 3: normed_data = cv2.cvtColor(normed_data, cv2.COLOR_RGB2BGR)
+
         height, width = normed_data.shape[:2]
         scale = min(self.max_width / width, self.max_height / height)
         new_width, new_height = int(width * scale), int(height * scale)
         resized_img = cv2.resize(normed_data, (new_width, new_height))
-
         
         cv2.namedWindow(self.window_name, cv2.WINDOW_AUTOSIZE)
         cv2.resizeWindow(self.window_name, new_width, new_height)
         cv2.imshow(self.window_name, resized_img)
 
         cv2.waitKey(self.wait_time)
-        cv2.destroyAllWindows()

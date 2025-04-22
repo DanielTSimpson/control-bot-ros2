@@ -63,6 +63,8 @@ def filter_depth(data, node):
 
     loss = (np.argmin(R) - np.size(R, 1) / 2) * K_cols / (data_cols / 2) #Loss as %-dist from middle of frame
     
+    node.display.show(R[0], "Depth Plot")
+    
     return Float32(data = loss)
 
 
@@ -73,6 +75,8 @@ class DepthProcessor(Node):
         
         self.loss = Float32()
         self.loss.data = 0.0
+        
+        self.display = Display(1)
 
         self.sub1 = self.create_subscription(
             Image,
@@ -95,25 +99,22 @@ class DepthProcessor(Node):
         bridge = CvBridge()
         depth_image = bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
         data = np.asarray(depth_image, dtype="int32")
-        data = crop(data, 0, 0, 0*480//2, 24)
+        data = crop(data, 0, 0, 196, 48)
         
         self.loss = filter_depth(data, self)
-        depth_row = data[int(np.size(data,0)/2*0.8)]
+        #depth_row = data[int(np.size(data,0)/2*0.8)]
         #self.loss = Float32(data = float((np.argmin(depth_row) - np.size(depth_row,0) / 2) / np.size(depth_row,0)))
         
-        display = Display(0)
-        #display.show(depth_row)
-        display.show(data)
+        self.display.show(data, "Depth Image")
 
     def callback2(self, msg):
         bridge = CvBridge()
         color_img = bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
         data = np.asarray(color_img, dtype="uint8")
-        data = crop(data, 0, 0, 0, 48)
-        
+        data = crop(data, 0, 0, 0, 48) 
         color_img = filter_img(data, self)
-        display = Display(0)
-        display.show(color_img)
+
+        self.display.show(color_img, "Color Image")
 
     def timer_callback(self):
         if self.loss:
