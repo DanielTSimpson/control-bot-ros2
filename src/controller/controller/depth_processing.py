@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 import time
 from .display_helper import Display
-
+from scipy.signal import find_peaks
 
 def crop(data, top = 0, right = 0, bottom = 0, left = 0):
     rows = np.size(data, 0)
@@ -42,7 +42,7 @@ def filter_img(data, node):
     return R
     
 
-def filter_depth(data, node):    
+def filter_depth(data, node): 
     data_rows = np.size(data, 0)  
     data_cols = np.size(data, 1)  
     K_rows = data_rows // 1  #Filter window height. Must be factor of data_rows
@@ -54,6 +54,11 @@ def filter_depth(data, node):
     # Correctly initialize the resultant matrix with zeros
     R = np.zeros((data_rows // K_rows, data_cols // K_cols))
 
+    # Reduce the camera's range below the threshold
+
+    data = np.where(data > 1000, 0, data)
+    data = np.where(data < 10, 0, data)
+
     for i in range(0, data_rows, K_rows):
         for j in range(0, data_cols, K_cols):
             sub_arr = data[i:(i + K_rows), j:(j + K_cols)]
@@ -62,9 +67,12 @@ def filter_depth(data, node):
             R[i // K_rows, j // K_cols] = np.sum(sub_arr * K)
 
     loss = (np.argmin(R) - np.size(R, 1) / 2) * K_cols / (data_cols / 2) #Loss as %-dist from middle of frame
+    peaks, properties = find_peaks(R[0], 100, 1) 
     
-    node.display.show(R[0], "Depth Plot")
-    
+    node.display.show(data, "Depth Image")
+    #node.display.show(R[0], "Depth Plot")
+    node.display.show(peaks, "Peaks")
+
     return Float32(data = loss)
 
 
@@ -105,7 +113,7 @@ class DepthProcessor(Node):
         #depth_row = data[int(np.size(data,0)/2*0.8)]
         #self.loss = Float32(data = float((np.argmin(depth_row) - np.size(depth_row,0) / 2) / np.size(depth_row,0)))
         
-        self.display.show(data, "Depth Image")
+        #self.display.show(data, "Depth Image")
 
     def callback2(self, msg):
         bridge = CvBridge()
@@ -114,7 +122,7 @@ class DepthProcessor(Node):
         data = crop(data, 0, 0, 0, 48) 
         color_img = filter_img(data, self)
 
-        self.display.show(color_img, "Color Image")
+        #self.display.show(color_img, "Color Image")
 
     def timer_callback(self):
         if self.loss:

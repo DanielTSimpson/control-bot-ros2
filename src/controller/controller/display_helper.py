@@ -32,7 +32,7 @@ class Display(object):
         plt.clf()
 
         plt.plot(data, linewidth = 7)
-        plt.plot(np.argmin(data), np.min(data), color='green', marker='o', linestyle='dashed', linewidth=2, markersize=12)
+#        plt.plot(np.argmin(data), np.min(data), color='green', marker='o', linestyle='dashed', linewidth=2, markersize=12)
         plt.ylim(-1000,5000)
         plt.ylabel("Vertical depth values")
         plt.xlabel("Horizontal Pixels")
@@ -43,7 +43,9 @@ class Display(object):
     def _show_img(self, data):
         normed_data = cv2.normalize(data, None, 0, 255, cv2.NORM_MINMAX)
         normed_data = np.uint8(normed_data)
-        if len(np.shape(data)) == 2: normed_data = cv2.applyColorMap(normed_data, cv2.COLORMAP_JET)
+        if len(np.shape(data)) == 2: 
+            normed_data = cv2.applyColorMap(normed_data, cv2.COLORMAP_JET)
+#            print(f"Max: {np.max(data)}\tMin: {np.min(data)}\tMed: {np.median(data)}") 
         elif len(np.shape(data)) == 3: normed_data = cv2.cvtColor(normed_data, cv2.COLOR_RGB2BGR)
 
         height, width = normed_data.shape[:2]
