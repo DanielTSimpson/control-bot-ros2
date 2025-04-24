@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 import time
 from .display_helper import Display
-from scipy.signal import find_peaks
+from scipy.signal import find_peaks, peak_widths
 
 def crop(data, top = 0, right = 0, bottom = 0, left = 0):
     rows = np.size(data, 0)
@@ -56,7 +56,7 @@ def filter_depth(data, node):
 
     # Reduce the camera's range below the threshold
 
-    data = np.where(data > 1000, 0, data)
+    data = np.where(data > 750, 0, data)
     data = np.where(data < 10, 0, data)
 
     for i in range(0, data_rows, K_rows):
@@ -66,12 +66,17 @@ def filter_depth(data, node):
             # Perform element-wise multiplication and sum the result for averaging
             R[i // K_rows, j // K_cols] = np.sum(sub_arr * K)
 
-    loss = (np.argmin(R) - np.size(R, 1) / 2) * K_cols / (data_cols / 2) #Loss as %-dist from middle of frame
-    peaks, properties = find_peaks(R[0], 100, 1) 
+    peaks, _ = find_peaks(R[0], prominence = 20, height=50)
+    widths = peak_widths(R[0], peaks, rel_height=0.75)
+    objects = np.unique((widths[2] + widths[3])/2).astype(int)
     
-    node.display.show(data, "Depth Image")
-    #node.display.show(R[0], "Depth Plot")
-    node.display.show(peaks, "Peaks")
+    #node.display.show(data, "Depth Image")
+    node.display.show(R[0], "Depth Plot")
+    #node.display.show(peaks, "Peaks")
+    
+    print(objects)
+    
+    loss = (objects[0] - len(R[0])/2) / (len(R[0])/2) #Loss as %-diff from middle
 
     return Float32(data = loss)
 

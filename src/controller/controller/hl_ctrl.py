@@ -20,7 +20,7 @@ class Controller(Node):
     """
     A node that commands the velocity and angular speed of the robot
     """
-    __Kp = 1    # Proportion constant
+    __Kp = 0.25    # Proportion constant
     __Ki = 0    # Integral constant
     __Kd = 0    # Derivative constant
 
@@ -45,7 +45,9 @@ class Controller(Node):
 
     def callback1(self, msg):
         loss = msg.data
-        result = int((254 - 65)*abs(loss) + 65)
+        result = int(Controller.__Kp * ((254 - 65)*abs(loss) + 65))
+        if result < 65 and result > 10: result = 65
+        else: result = 0
         if loss < 0:
             Controller.__M1 = -result
             Controller.__M3 = -result

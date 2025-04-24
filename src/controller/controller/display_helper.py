@@ -33,9 +33,10 @@ class Display(object):
 
         plt.plot(data, linewidth = 7)
 #        plt.plot(np.argmin(data), np.min(data), color='green', marker='o', linestyle='dashed', linewidth=2, markersize=12)
-        plt.ylim(-1000,5000)
+        plt.ylim(-200,500)
         plt.ylabel("Vertical depth values")
         plt.xlabel("Horizontal Pixels")
+        plt.title(self.window_name)
 
         plt.pause(0.1)
 
