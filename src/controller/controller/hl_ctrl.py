@@ -1,6 +1,5 @@
 import rclpy
 
-from time import sleep
 from rclpy.node import Node
 from std_msgs.msg import String
 from std_msgs.msg import Float32
@@ -20,7 +19,7 @@ class Controller(Node):
     """
     A node that commands the velocity and angular speed of the robot
     """
-    __Kp = 0.25    # Proportion constant
+    __Kp = 1    # Proportion constant
     __Ki = 0    # Integral constant
     __Kd = 0    # Derivative constant
 
@@ -33,7 +32,8 @@ class Controller(Node):
         super().__init__('Controller')
         
         self.i = 0
-        
+        self.timer_period = 0.05
+
         self.sub1 = self.create_subscription(
                 Float32,
                 'loss_function',
@@ -41,13 +41,16 @@ class Controller(Node):
                 10)
 
         self.publisher = self.create_publisher(String, 'motor_commands', 10)
-        self.timer = self.create_timer(0.1, self.timer_callback)
+        self.timer = self.create_timer(self.timer_period, self.timer_callback)
 
     def callback1(self, msg):
         loss = msg.data
-        result = int(Controller.__Kp * ((254 - 65)*abs(loss) + 65))
-        if result < 65 and result > 10: result = 65
-        else: result = 0
+        
+        if abs(loss) < 0.10:
+            result = 0
+        else:
+            result = int(Controller.__Kp * ((254/1.5 - 75)*abs(loss) + 75)
+        
         if loss < 0:
             Controller.__M1 = -result
             Controller.__M3 = -result

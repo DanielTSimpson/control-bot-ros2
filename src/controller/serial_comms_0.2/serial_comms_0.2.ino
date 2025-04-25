@@ -15,7 +15,7 @@ Adafruit_DCMotor *myMotor4 = AFMS.getMotor(4);
 
 const byte numChars = 8;
 bool gotData = false;
-int timeStep = 1000;
+int timeStep = 250;
 uint8_t mtrDir = FORWARD;
 
 void setup() {
@@ -26,6 +26,7 @@ void setup() {
     Serial.println("Could not find Motor Shield. Check wiring.");
     while (1);
   }
+  delay(1000);
 }
 
 

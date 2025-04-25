@@ -10,6 +10,7 @@ class HWInterface(Node):
    """
    def __init__(self):
         super().__init__('hw_interface')
+        
         # Initialize the port and Wait half a second to let it initialize
         self.serial_port = serial.Serial(
             port="/dev/ttyACM0", #/dev/ttyTHS1
@@ -25,7 +26,6 @@ class HWInterface(Node):
             'motor_commands', 
             self.listener_callback,
             10)
-        self.subscription
      
 
    def listener_callback(self, msg):
@@ -46,7 +46,7 @@ class HWInterface(Node):
 
         self.serial_port.write(bytearray(data))
         self.get_logger().info(f'Sending {data}')
-        time.sleep(1) 
+        #time.sleep(1) 
 
 def main(args=None):
     rclpy.init(args=args)

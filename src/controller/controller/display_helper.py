@@ -38,7 +38,7 @@ class Display(object):
         plt.xlabel("Horizontal Pixels")
         plt.title(self.window_name)
 
-        plt.pause(0.1)
+       # plt.pause(0.1)
 
 
     def _show_img(self, data):

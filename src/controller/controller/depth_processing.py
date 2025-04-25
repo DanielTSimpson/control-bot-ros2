@@ -5,7 +5,6 @@ from std_msgs.msg import Float32
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
-import time
 from .display_helper import Display
 from scipy.signal import find_peaks, peak_widths
 
@@ -75,9 +74,10 @@ def filter_depth(data, node):
     #node.display.show(peaks, "Peaks")
     
     print(objects)
-    
-    loss = (objects[0] - len(R[0])/2) / (len(R[0])/2) #Loss as %-diff from middle
-
+    if len(objects) != 0:
+        loss = (objects[0] - len(R[0])/2) / (len(R[0])/2) #Loss as %-diff from middle
+    else:
+        loss = 0.0
     return Float32(data = loss)
 
 
@@ -89,7 +89,8 @@ class DepthProcessor(Node):
         self.loss = Float32()
         self.loss.data = 0.0
         
-        self.display = Display(1)
+        timer_period = 0.05
+        self.display = Display(int(timer_period*1000))
 
         self.sub1 = self.create_subscription(
             Image,
@@ -97,28 +98,22 @@ class DepthProcessor(Node):
             self.callback1,
             10)
         
-        self.sub2 = self.create_subscription(
-            Image,
-            'realsense2_camera/color/image_raw',
-            self.callback2,
-            10)
+        #self.sub2 = self.create_subscription(
+        #    Image,
+        #    'realsense2_camera/color/image_raw',
+        #    self.callback2,
+        #    10)
 
         self.publisher = self.create_publisher(Float32, 'loss_function', 10)
 
-        timer_period = 0.05
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def callback1(self, msg):
         bridge = CvBridge()
         depth_image = bridge.imgmsg_to_cv2(msg, desired_encoding='passthrough')
         data = np.asarray(depth_image, dtype="int32")
-        data = crop(data, 0, 0, 196, 48)
-        
+        data = crop(data, 0, 0, 196, 48)        
         self.loss = filter_depth(data, self)
-        #depth_row = data[int(np.size(data,0)/2*0.8)]
-        #self.loss = Float32(data = float((np.argmin(depth_row) - np.size(depth_row,0) / 2) / np.size(depth_row,0)))
-        
-        #self.display.show(data, "Depth Image")
 
     def callback2(self, msg):
         bridge = CvBridge()
@@ -126,7 +121,6 @@ class DepthProcessor(Node):
         data = np.asarray(color_img, dtype="uint8")
         data = crop(data, 0, 0, 0, 48) 
         color_img = filter_img(data, self)
-
         #self.display.show(color_img, "Color Image")
 
     def timer_callback(self):
