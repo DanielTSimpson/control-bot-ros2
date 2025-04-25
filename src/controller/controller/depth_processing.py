@@ -65,19 +65,21 @@ def filter_depth(data, node):
             # Perform element-wise multiplication and sum the result for averaging
             R[i // K_rows, j // K_cols] = np.sum(sub_arr * K)
 
-    peaks, _ = find_peaks(R[0], prominence = 20, height=50)
+    peaks, _ = find_peaks(R[0], prominence = 100, height=50)
     widths = peak_widths(R[0], peaks, rel_height=0.75)
     objects = np.unique((widths[2] + widths[3])/2).astype(int)
     
     #node.display.show(data, "Depth Image")
-    node.display.show(R[0], "Depth Plot")
+    node.display.show_plot(R[0], points = objects, widths = widths)
     #node.display.show(peaks, "Peaks")
     
-    print(objects)
+    #print(objects)
+    
     if len(objects) != 0:
         loss = (objects[0] - len(R[0])/2) / (len(R[0])/2) #Loss as %-diff from middle
     else:
         loss = 0.0
+
     return Float32(data = loss)
 
 
@@ -90,7 +92,7 @@ class DepthProcessor(Node):
         self.loss.data = 0.0
         
         timer_period = 0.05
-        self.display = Display(int(timer_period*1000))
+        self.display = Display(0, "Depth Data")
 
         self.sub1 = self.create_subscription(
             Image,

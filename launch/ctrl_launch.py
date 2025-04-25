@@ -21,11 +21,16 @@ def generate_launch_description():
                 'depth_module.profile': LaunchConfiguration('depth_profile'),
                 'enable_depth': LaunchConfiguration('enable_depth')
             }]
-        ),
-        # Node(
-        #     package='controller',
-        #     namespace='bot_controller',
-        #     executable='depth_processing'
-        # ),
+        )#,
+        #Node(
+        #    package='controller',
+        #    namespace='bot_controller',
+        #    executable='depth_processing'
+        #)#,
+        #Node(
+        #    package='controller',
+        #    namespace='bot_controller',
+        #    executable="hl_ctrl"
+        #)
     ])
 

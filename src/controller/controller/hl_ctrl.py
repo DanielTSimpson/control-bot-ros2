@@ -49,9 +49,10 @@ class Controller(Node):
         if abs(loss) < 0.10:
             result = 0
         else:
-            result = int(Controller.__Kp * ((254/1.5 - 75)*abs(loss) + 75)
-        
-        if loss < 0:
+            #result = int(Controller.__Kp * ((254/1.5 - 75)*abs(loss) + 75)
+            result = 75
+
+        if loss > 0:
             Controller.__M1 = -result
             Controller.__M3 = -result
             Controller.__M2 = result

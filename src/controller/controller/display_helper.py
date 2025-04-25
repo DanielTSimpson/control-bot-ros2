@@ -28,20 +28,22 @@ class Display(object):
             print("Incompatable data array dimensions %i" % len(data))
 
 
-    def _show_plot(self, data):
+    def show_plot(self, data, points = None, widths = None):
         plt.clf()
 
         plt.plot(data, linewidth = 7)
-#        plt.plot(np.argmin(data), np.min(data), color='green', marker='o', linestyle='dashed', linewidth=2, markersize=12)
+        if points: plt.plot(points, data[points], 'x')
+        if widths: plt.plot(*widths[1:], color="C2")
+        
         plt.ylim(-200,500)
         plt.ylabel("Vertical depth values")
         plt.xlabel("Horizontal Pixels")
         plt.title(self.window_name)
 
-       # plt.pause(0.1)
+        plt.pause(0.05)
 
 
-    def _show_img(self, data):
+    def show_img(self, data):
         normed_data = cv2.normalize(data, None, 0, 255, cv2.NORM_MINMAX)
         normed_data = np.uint8(normed_data)
         if len(np.shape(data)) == 2: 
