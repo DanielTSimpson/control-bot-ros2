@@ -54,7 +54,6 @@ def filter_depth(data, node):
     R = np.zeros((data_rows // K_rows, data_cols // K_cols))
 
     # Reduce the camera's range below the threshold
-
     data = np.where(data > 750, 0, data)
     data = np.where(data < 10, 0, data)
 
@@ -70,10 +69,12 @@ def filter_depth(data, node):
     objects = np.unique((widths[2] + widths[3])/2).astype(int)
     
     #node.display.show(data, "Depth Image")
-    node.display.show_plot(R[0], points = objects, widths = widths)
-    #node.display.show(peaks, "Peaks")
+    #node.display.show_plot(R[0], points = objects, widths = widths)
+    with open("/home/daniel/controlbot_ws/object_captures.txt", "a") as f:
+        f.write(str(R[0]) +"\n")
+        f.close()
     
-    #print(objects)
+    print(objects)
     
     if len(objects) != 0:
         loss = (objects[0] - len(R[0])/2) / (len(R[0])/2) #Loss as %-diff from middle

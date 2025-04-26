@@ -46,7 +46,7 @@ class Controller(Node):
     def callback1(self, msg):
         loss = msg.data
         
-        if abs(loss) < 0.10:
+        if abs(loss) < 0.20:
             result = 0
         else:
             #result = int(Controller.__Kp * ((254/1.5 - 75)*abs(loss) + 75)
