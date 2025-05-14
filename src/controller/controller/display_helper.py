@@ -21,9 +21,9 @@ class Display(object):
     def show(self, data, window_name = None):
         self.window_name = window_name if window_name else self.window_name
         if len(np.shape(data)) == 1:
-            self._show_plot(data)
+            self.show_plot(data)
         elif len(np.shape(data)) == 2 or len(np.shape(data)) == 3:
-            self._show_img(data)
+            self.show_img(data)
         else:
             print("Incompatable data array dimensions %i" % len(data))
 

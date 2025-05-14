@@ -1,9 +1,8 @@
 import rclpy
-import time
 import serial
-
 from rclpy.node import Node
 from std_msgs.msg import String
+
 class HWInterface(Node):
    """
    A node that sends the  motor signals to the Arduino
@@ -19,14 +18,14 @@ class HWInterface(Node):
             parity=serial.PARITY_NONE,
             stopbits=serial.STOPBITS_ONE,
         )
-        time.sleep(0.5)
-
+        
+        rclpy.spin_once(self, timeout_sec=0.1)
+        
         self.subscription = self.create_subscription(
             String, 
             'motor_commands', 
             self.listener_callback,
             10)
-     
 
    def listener_callback(self, msg):
         mtrCmds = msg.data.split("_")
@@ -46,7 +45,6 @@ class HWInterface(Node):
 
         self.serial_port.write(bytearray(data))
         self.get_logger().info(f'Sending {data}')
-        #time.sleep(1) 
 
 def main(args=None):
     rclpy.init(args=args)

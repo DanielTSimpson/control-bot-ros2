@@ -70,11 +70,10 @@ def filter_depth(data, node):
     
     #node.display.show(data, "Depth Image")
     #node.display.show_plot(R[0], points = objects, widths = widths)
+    
     with open("/home/daniel/controlbot_ws/object_captures.txt", "a") as f:
         f.write(str(R[0]) +"\n")
         f.close()
-    
-    print(objects)
     
     if len(objects) != 0:
         loss = (objects[0] - len(R[0])/2) / (len(R[0])/2) #Loss as %-diff from middle
@@ -93,7 +92,7 @@ class DepthProcessor(Node):
         self.loss.data = 0.0
         
         timer_period = 0.05
-        self.display = Display(0, "Depth Data")
+        self.display = Display(5, "Depth Data")
 
         self.sub1 = self.create_subscription(
             Image,
@@ -108,7 +107,6 @@ class DepthProcessor(Node):
         #    10)
 
         self.publisher = self.create_publisher(Float32, 'loss_function', 10)
-
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
     def callback1(self, msg):

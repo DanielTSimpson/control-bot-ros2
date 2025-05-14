@@ -28,11 +28,13 @@ class Controller(Node):
     __M3 = 0
     __M4 = 0
 
+    __minLoss = 0.06
+
     def __init__(self):
         super().__init__('Controller')
         
         self.i = 0
-        self.timer_period = 0.05
+        self.timer_period = 1/16 
 
         self.sub1 = self.create_subscription(
                 Float32,
@@ -46,31 +48,34 @@ class Controller(Node):
     def callback1(self, msg):
         loss = msg.data
         
-        if abs(loss) < 0.20:
+        if abs(loss) < Controller.__minLoss:
             result = 0
         else:
-            #result = int(Controller.__Kp * ((254/1.5 - 75)*abs(loss) + 75)
-            result = 75
+            result = 100
 
         if loss > 0:
-            Controller.__M1 = -result
-            Controller.__M3 = -result
-            Controller.__M2 = result
-            Controller.__M4 = result
-        else:
             Controller.__M1 = result
             Controller.__M3 = result
             Controller.__M2 = -result
             Controller.__M4 = -result
+        else:
+            Controller.__M1 = -result
+            Controller.__M3 = -result
+            Controller.__M2 = result
+            Controller.__M4 = result
         
-    def timer_callback(self):
-        
+    def timer_callback(self): 
         msg = String()
-        
         msg.data = '{}_{}_{}_{}'.format(Controller.__M1, Controller.__M2, Controller.__M3, Controller.__M4)
         self.get_logger().info("Publishing {}".format(msg.data))
         self.publisher.publish(msg)
 
+    def on_shutdown(self):
+        self.get_logger().info("Node is shutting down. Sending failsafe command.")
+        msg = String()
+        msg.data = "0_0_0_0"
+        self.publisher.publish(msg)
+        rclpy.spin_once(self, timeout_sec=0.1)
 
 def main(args=None):
     """
@@ -85,9 +90,14 @@ def main(args=None):
         
     rclpy.init(args=args)
     hl_ctrl = Controller()
-    rclpy.spin(hl_ctrl)
-    hl_ctrl.destroy_node()
-    rclpy.shutdown()
+    try:
+        rclpy.spin(hl_ctrl)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        hl_ctrl.on_shutdown()
+        hl_ctrl.destroy_node()
+        rclpy.shutdown()
 
 if __name__ == '__main__':
     # Runs a talker node when this script is run directly (not through an entrypoint)
