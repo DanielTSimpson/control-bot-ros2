@@ -15,7 +15,7 @@ Adafruit_DCMotor *myMotor4 = AFMS.getMotor(4);
 
 const byte numChars = 8;
 bool gotData = false;
-int timeStep = 250;
+int timeStep = 125;
 uint8_t mtrDir = FORWARD;
 
 void setup() {
@@ -29,23 +29,17 @@ void setup() {
   delay(1000);
 }
 
-
 void loop() {
   int mtrData[numChars];
-  
   getInstructions(mtrData);
-  
   if (gotData){    
     setMotors(mtrData);
+  }  
+  else {
+    memset(mtrData, 0, sizeof(mtrData));
+    setMotors(mtrData);
   }
-  
-  delay(timeStep);
-
-  memset(mtrData, 0, sizeof(mtrData));
-  setMotors(mtrData);
-
   gotData = false;
-  delay(0);  
 }
 
 void getInstructions(int receivedBytes[numChars]) {
@@ -53,11 +47,8 @@ void getInstructions(int receivedBytes[numChars]) {
   byte msg;
   static byte i = 0;
   static bool receivingData = false;
-
   while (Serial.available() > 0) {
-    
     msg = Serial.read();
-    
     if (msg == delimByte && receivingData == false) {
       receivingData = true;
     } else if (msg == delimByte  && receivingData == true) {
@@ -66,7 +57,6 @@ void getInstructions(int receivedBytes[numChars]) {
       receivedBytes[i] = msg;
       i++;
     }
-
     if (i >= numChars) {
       i = 0;
       gotData = true;
@@ -77,7 +67,6 @@ void getInstructions(int receivedBytes[numChars]) {
 
 void setMotors(int mtrCmds[numChars]) {
   for (int i = 0; i < numChars; i++){
-            
     if (i%2 == 0){
       if (mtrCmds[i] == 0){
         mtrDir = FORWARD;
