@@ -71,9 +71,9 @@ def filter_depth(data, node):
     #node.display.show(data, "Depth Image")
     #node.display.show_plot(R[0], points = objects, widths = widths)
     
-    with open("/home/daniel/controlbot_ws/object_captures.txt", "a") as f:
-        f.write(str(R[0]) +"\n")
-        f.close()
+    #with open("/home/daniel/controlbot_ws/object_captures.txt", "a") as f:
+    #    f.write(str(R[0]) +"\n")
+    #    f.close()
     
     if len(objects) != 0:
         loss = (objects[0] - len(R[0])/2) / (len(R[0])/2) #Loss as %-diff from middle
