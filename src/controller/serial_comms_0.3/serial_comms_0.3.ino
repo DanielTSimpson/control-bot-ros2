@@ -60,6 +60,11 @@ bool getInstructions(int* motorData) {
         i = 0;
         return true;
       } 
+      else {
+        i = 0;
+        receivingData = false;
+	return false;
+      } 
     } 
     
     else if (msg != delimByte && receivingData) {
