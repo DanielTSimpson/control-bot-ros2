@@ -17,12 +17,12 @@ const byte numChars = 8;
 bool gotData = false;
 uint8_t mtrDir = FORWARD;
 unsigned long lastCmdTime = 0;
-int failsafeDelay = 100;
+int failsafeDelay = 250;
+
 
 void setup() {
   Serial.begin(115200);
   if (!AFMS.begin()) {
-    Serial.println("Could not find Motor Shield. Check wiring.");
     while (1);
   }
   delay(1000);
@@ -30,8 +30,8 @@ void setup() {
 
 void loop() {
   int mtrData[numChars];
-  getInstructions(mtrData);
-  if (gotData){    
+  
+  if (getInstructions(mtrData)){   
     setMotors(mtrData);
     lastCmdTime = millis();
   }  
@@ -39,31 +39,35 @@ void loop() {
     memset(mtrData, 0, sizeof(mtrData));
     setMotors(mtrData);
   }
-  gotData = false;
 }
 
-void getInstructions(int receivedBytes[numChars]) {
-  byte delimByte = 255;
+bool getInstructions(int* motorData) {
+  const byte delimByte = 255;
   byte msg;
   static byte i = 0;
   static bool receivingData = false;
   
   while (Serial.available() > 0) {
     msg = Serial.read();
-    if (msg == delimByte && receivingData == false) {
+    if (msg == delimByte && !receivingData) {
       receivingData = true;
-    } else if (msg == delimByte  && receivingData == true) {
-      receivingData = false;
-    } else if (msg != delimByte && receivingData == true) {
-      receivedBytes[i] = msg;
-      i++;
-    }
-    if (i >= numChars) {
       i = 0;
-      gotData = true;
-      return receivedBytes;
+    } 
+    
+    else if (msg == delimByte  && receivingData) {
+      if (i == numChars){
+        receivingData = false;
+        i = 0;
+        return true;
+      } 
+    } 
+    
+    else if (msg != delimByte && receivingData) {
+      motorData[i++] = msg;
     }
   }
+
+  return false;
 }
 
 void setMotors(int mtrCmds[numChars]) {

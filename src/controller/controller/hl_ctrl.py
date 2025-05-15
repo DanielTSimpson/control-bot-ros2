@@ -51,7 +51,7 @@ class Controller(Node):
         if abs(loss) < Controller.__minLoss:
             result = 0
         else:
-            result = 100
+            result = int(100 + 155*abs(loss))
 
         if loss > 0:
             Controller.__M1 = result
